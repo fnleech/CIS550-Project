@@ -61,5 +61,10 @@ travel.sum =summarySE(dat.travel, measurevar="value", groupvars=c("location"), n
 ggplot(travel.sum, aes(x=location, y=value)) + 
   geom_bar(stat="identity") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
+#Basic Heat Map of Travel Cases
+ggplot(data = dat.travel, aes(x = location, y = report_date)) +
+  geom_tile(aes(fill = value)) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
+ggplot(data = travel.sum, aes(x = location, y = value)) +
+  geom_tile(aes(fill = value)) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
