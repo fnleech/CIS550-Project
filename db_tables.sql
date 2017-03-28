@@ -6,8 +6,8 @@ PRIMARY KEY (StateCode)
 CREATE TABLE Cases (
 StateCode VARCHAR(2),
 CaseNum int, 
-Date date,  
-PRIMARY KEY (StateCode, Date),
+CaseDate date,  
+PRIMARY KEY (StateCode, CaseDate),
 FOREIGN KEY (StateCode) REFERENCES State(StateCode)
 );
 CREATE TABLE CaseCount (
