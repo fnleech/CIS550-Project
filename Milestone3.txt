@@ -1,0 +1,6 @@
+Sqlplus Connect String:
+    sqlplus 'USERNAME@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=cis550project.cgajnbzkqq1i.us-west-2.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=PENNDB)))';
+Guest Password:
+    PASSWORD
+
+Queries:
