@@ -1,7 +1,7 @@
 import cx_Oracle
 import csv
 rows = []
-with open('latlongdata/StateStateCode.csv', 'rb') as csvfile:
+with open('FinalData/StateStateCode.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for line in spamreader:
         row = (line[0], line[1])
