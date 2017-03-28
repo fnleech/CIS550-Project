@@ -1,6 +1,6 @@
 CREATE TABLE State (
 State VARCHAR (225),
-StateCode VARCHAR(2),
+StateCode VARCHAR(225),
 PRIMARY KEY (StateCode)
 );
 CREATE TABLE Cases (
