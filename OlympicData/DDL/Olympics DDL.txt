@@ -1,0 +1,71 @@
+CREATE TABLE Olympics (
+ Year INTEGER, 
+ Opening ceremony Date, 
+ Closing ceremony Date,
+ Cost VARCHAR(25), 
+ Primary Key (Year)
+);
+
+CREATE TABLE Participates (
+ Year INTEGER,
+ CID VARCHAR(12), 
+ Role VARCHAR(25), 
+ Primary Key (Year, CID, Role),
+ Foreign Key (Year) References Olympics(Year),
+ Foreign Key (CID) References Country(CID),
+ CHECK (role IN ('host','participate','both', 'none')),
+);
+
+CREATE TABLE Country (
+ CID VARCHAR(12), 
+ Name VARCHAR(80), 
+ Continent VARCHAR(50), 
+ Population VARCHAR(10), 
+ GDP VARCHAR(25),  
+ Primary Key (CID)
+);
+
+CREATE TABLE Athlete (
+ AID INTEGER,
+ LastName VARCHAR(50),
+ FirstName VARCHAR(50),  
+ DOB Date, 
+ Gender VARCHAR(25), 
+ Height VARCHAR(25), 
+ Weight VARCHAR(25), 
+ Primary Key (ID)
+);
+
+CREATE TABLE From (
+ CID VARCHAR(12), 
+ AID INTEGER,
+ Primary Key (CID, AID)
+ Foreign Key (CID) References Country(CID),
+ Foreign Key (AID) References Athlete(AID)
+);
+
+CREATE TABLE Sport (
+ Name VARCHAR(25), 
+ Gender VARCHAR(25), 
+ Discipline VARCHAR(50), 
+ Event VARCHAR(100), 
+ Primary Key (Name, Gender, Discipline, Event)
+);
+
+CREATE TABLE Compete_in (
+ AID INTEGER,
+ SName VARCHAR(25), 
+ SGender VARCHAR(25), 
+ Discipline VARCHAR(25), 
+ Event VARCHAR(25), 
+ Medal VARCHAR(25), 
+ Primary Key (AID, SName, SGender, Discipline, Event, Medal),
+ Foreign Key (SName, SGender, Discipline, Event) References Sport(Name, Gender, Discipline, Event),
+ Foreign Key (AID) References Athlete(AID),
+ CHECK (Medal IN ('Gold','Silver','Bronze', 'None')
+);
+
+
+
+
+
