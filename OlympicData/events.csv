@@ -1,0 +1,307 @@
+sport,discipline,name,sex
+aquatics,backstroke,100m Backstroke,female
+aquatics,backstroke,200m Backstroke,female
+aquatics,backstroke,100m Backstroke,male
+aquatics,backstroke,200m Backstroke,male
+aquatics,breaststroke,100m Breaststroke,female
+aquatics,breaststroke,200m Breaststroke,female
+aquatics,breaststroke,100m Breaststroke,male
+aquatics,breaststroke,200m Breaststroke,male
+aquatics,butterfly,100m Butterfly,female
+aquatics,butterfly,200m Butterfly,female
+aquatics,butterfly,100m Butterfly,male
+aquatics,butterfly,200m Butterfly,male
+aquatics,diving,10m Platform,female
+aquatics,diving,3m Springboard,female
+aquatics,diving,Synchronised 10m Platform,female
+aquatics,diving,Synchronised 3m Springboard,female
+aquatics,diving,10m Platform,male
+aquatics,diving,3m Springboard,male
+aquatics,diving,Synchronised 10m Platform,male
+aquatics,diving,Synchronised 3m Springboard,male
+aquatics,freestyle,100m Freestyle,female
+aquatics,freestyle,200m Freestyle,female
+aquatics,freestyle,4 x 100m Freestyle Relay,female
+aquatics,freestyle,4 x 200m Freestyle Relay,female
+aquatics,freestyle,400m Freestyle,female
+aquatics,freestyle,50m Freestyle,female
+aquatics,freestyle,800m Freestyle,female
+aquatics,freestyle,100m Freestyle,male
+aquatics,freestyle,1500m Freestyle,male
+aquatics,freestyle,200m Freestyle,male
+aquatics,freestyle,4 x 100m Freestyle Relay,male
+aquatics,freestyle,4 x 200m Freestyle Relay,male
+aquatics,freestyle,400m Freestyle,male
+aquatics,freestyle,50m Freestyle,male
+aquatics,marathon swimming,10km,female
+aquatics,marathon swimming,10km,male
+aquatics,medley,200m Individual Medley,female
+aquatics,medley,4 x 100m Medley Relay,female
+aquatics,medley,400m Individual Medley,female
+aquatics,medley,200m Individual Medley,male
+aquatics,medley,4 x 100m Medley Relay,male
+aquatics,medley,400m Individual Medley,male
+aquatics,synchronised swimming,Duets,female
+aquatics,synchronised swimming,Teams,female
+aquatics,water polo,water polo,female
+aquatics,water polo,water polo,male
+archery,archery,Individual,female
+archery,archery,Team,female
+archery,archery,Individual,male
+archery,archery,Team,male
+athletics,combined,Heptathlon,female
+athletics,combined,Decathlon,male
+athletics,jumps,High Jump,female
+athletics,jumps,Long Jump,female
+athletics,jumps,Pole Vault,female
+athletics,jumps,Triple Jump,female
+athletics,jumps,High Jump,male
+athletics,jumps,Long Jump,male
+athletics,jumps,Pole Vault,male
+athletics,jumps,Triple Jump,male
+athletics,road,20km Walk,female
+athletics,road,Marathon,female
+athletics,road,20km Walk,male
+athletics,road,50km Walk,male
+athletics,road,Marathon,male
+athletics,throws,Discus Throw,female
+athletics,throws,Hammer Throw,female
+athletics,throws,Javelin Throw,female
+athletics,throws,Shot Put,female
+athletics,throws,Discus Throw,male
+athletics,throws,Hammer Throw,male
+athletics,throws,Javelin Throw,male
+athletics,throws,Shot Put,male
+athletics,track,"10,000m",female
+athletics,track,100m,female
+athletics,track,100m Hurdles,female
+athletics,track,1500m,female
+athletics,track,200m,female
+athletics,track,3000m Steeplechase,female
+athletics,track,4 x 100m Relay,female
+athletics,track,4 x 400m Relay,female
+athletics,track,400m,female
+athletics,track,400m Hurdles,female
+athletics,track,5000m,female
+athletics,track,800m,female
+athletics,track,"10,000m",male
+athletics,track,100m,male
+athletics,track,110m Hurdles,male
+athletics,track,1500m,male
+athletics,track,200m,male
+athletics,track,3000m Steeplechase,male
+athletics,track,4 x 100m Relay,male
+athletics,track,4 x 400m Relay,male
+athletics,track,400m,male
+athletics,track,400m Hurdles,male
+athletics,track,5000m,male
+athletics,track,800m,male
+badminton,badminton,Doubles,female
+badminton,badminton,Singles,female
+badminton,badminton,Doubles,male
+badminton,badminton,Singles,male
+badminton,badminton,Doubles,mixed
+basketball,basketball,Women,female
+basketball,basketball,Men,male
+boxing,boxing,Fly (48-51kg),female
+boxing,boxing,Light (57-60kg),female
+boxing,boxing,Middle (69-75kg),female
+boxing,boxing,Bantam (56kg),male
+boxing,boxing,Fly (52kg),male
+boxing,boxing,Heavy (91kg),male
+boxing,boxing,Light (60kg),male
+boxing,boxing,Light Fly (46-49kg),male
+boxing,boxing,Light Heavy (81kg),male
+boxing,boxing,Light Welter (64kg),male
+boxing,boxing,Middle (75kg),male
+boxing,boxing,Super Heavy (+91kg),male
+boxing,boxing,Welter (69kg),male
+canoe,canoe slalom,Kayak (K1),female
+canoe,canoe slalom,Canoe Double (C2),male
+canoe,canoe slalom,Canoe Single (C1),male
+canoe,canoe slalom,Kayak (K1),male
+canoe,canoe sprint,Kayak Double 500m,female
+canoe,canoe sprint,Kayak Four 500m,female
+canoe,canoe sprint,Kayak Single 200m,female
+canoe,canoe sprint,Kayak Single 500m,female
+canoe,canoe sprint,Canoe Double 1000m,male
+canoe,canoe sprint,Canoe Single 1000m,male
+canoe,canoe sprint,Canoe Single 200m,male
+canoe,canoe sprint,Kayak Double 1000m,male
+canoe,canoe sprint,Kayak Double 200m,male
+canoe,canoe sprint,Kayak Four 1000m,male
+canoe,canoe sprint,Kayak Single 1000m,male
+canoe,canoe sprint,Kayak Single 200m,male
+cycling,cycling bmx,Women,female
+cycling,cycling bmx,Men,male
+cycling,cycling mountain bike,Cross-country,female
+cycling,cycling mountain bike,Cross-country,male
+cycling,cycling road,Individual Time Trial,female
+cycling,cycling road,Road Race,female
+cycling,cycling road,Individual Time Trial,male
+cycling,cycling road,Road Race,male
+cycling,cycling track,Keirin,female
+cycling,cycling track,Omnium,female
+cycling,cycling track,Sprint,female
+cycling,cycling track,Team Pursuit,female
+cycling,cycling track,Team Sprint,female
+cycling,cycling track,Keirin,male
+cycling,cycling track,Omnium,male
+cycling,cycling track,Sprint,male
+cycling,cycling track,Team Pursuit,male
+cycling,cycling track,Team Sprint,male
+equestrian,dressage,Dressage Individual,mixed
+equestrian,dressage,Dressage Team,mixed
+equestrian,eventing,Eventing Individual,mixed
+equestrian,eventing,Eventing Team,mixed
+equestrian,jumping,Jumping Individual,mixed
+equestrian,jumping,Jumping Team,mixed
+fencing,individual,Foil Individual,female
+fencing,individual,Sabre Individual,female
+fencing,individual,epee Individual,female
+fencing,individual,Foil Individual,male
+fencing,individual,Sabre Individual,male
+fencing,individual,epee Individual,male
+fencing,team,Sabre Team,female
+fencing,team,epee Team,female
+fencing,team,Foil Team,male
+fencing,team,epee Team,male
+football,football,Women,female
+football,football,Men,male
+golf,golf,Individual Stroke Play,female
+golf,golf,Individual Stroke Play,male
+gymnastics,artistic gymnastics,Balance Beam,female
+gymnastics,artistic gymnastics,Floor Exercise,female
+gymnastics,artistic gymnastics,Individual All-Around,female
+gymnastics,artistic gymnastics,Team,female
+gymnastics,artistic gymnastics,Uneven Bars,female
+gymnastics,artistic gymnastics,Vault,female
+gymnastics,artistic gymnastics,Floor Exercise,male
+gymnastics,artistic gymnastics,Horizontal Bar,male
+gymnastics,artistic gymnastics,Individual All-Around,male
+gymnastics,artistic gymnastics,Parallel Bars,male
+gymnastics,artistic gymnastics,Pommel Horse,male
+gymnastics,artistic gymnastics,Rings,male
+gymnastics,artistic gymnastics,Team,male
+gymnastics,artistic gymnastics,Vault,male
+gymnastics,rhythmic gymnastics,Group All-Around,female
+gymnastics,rhythmic gymnastics,Individual All-Around,female
+gymnastics,trampoline gymnastics,Women,female
+gymnastics,trampoline gymnastics,Men,male
+handball,handball,Women,female
+handball,handball,Men,male
+hockey,hockey,Women,female
+hockey,hockey,Men,male
+judo,judo,Women +78 kg,female
+judo,judo,Women -48 kg,female
+judo,judo,Women -52 kg,female
+judo,judo,Women -57 kg,female
+judo,judo,Women -63 kg,female
+judo,judo,Women -70 kg,female
+judo,judo,Women -78 kg,female
+judo,judo,Men +100 kg,male
+judo,judo,Men -100 kg,male
+judo,judo,Men -60 kg,male
+judo,judo,Men -66 kg,male
+judo,judo,Men -73 kg,male
+judo,judo,Men -81 kg,male
+judo,judo,Men -90 kg,male
+modern pentathlon,modern pentathlon,Women's Individual,female
+modern pentathlon,modern pentathlon,Men's Individual,male
+rowing,rowing,Lightweight Double Sculls,female
+rowing,rowing,Double Sculls,female
+rowing,rowing,Eight,female
+rowing,rowing,Pair,female
+rowing,rowing,Quadruple Sculls,female
+rowing,rowing,Single Sculls,female
+rowing,rowing,Lightweight Double Sculls,male
+rowing,rowing,Lightweight Four,male
+rowing,rowing,Double Sculls,male
+rowing,rowing,Eight,male
+rowing,rowing,Four,male
+rowing,rowing,Pair,male
+rowing,rowing,Quadruple Sculls,male
+rowing,rowing,Single Sculls,male
+rugby sevens,rugby sevens,Women,female
+rugby sevens,rugby sevens,Men,male
+sailing,sailing,470,female
+sailing,sailing,49er FX,female
+sailing,sailing,Laser Radial,female
+sailing,sailing,RS:X,female
+sailing,sailing,470,male
+sailing,sailing,49er,male
+sailing,sailing,Finn,male
+sailing,sailing,Laser,male
+sailing,sailing,RS:X,male
+sailing,sailing,Nacra 17 Mixed,mixed
+shooting,shooting,10m Air Pistol,female
+shooting,shooting,10m Air Rifle,female
+shooting,shooting,25m Pistol,female
+shooting,shooting,50m Rifle 3 Positions,female
+shooting,shooting,Skeet,female
+shooting,shooting,Trap,female
+shooting,shooting,10m Air Pistol,male
+shooting,shooting,10m Air Rifle,male
+shooting,shooting,25m Rapid Fire Pistol,male
+shooting,shooting,50m Pistol,male
+shooting,shooting,50m Rifle 3 Positions,male
+shooting,shooting,50m Rifle Prone,male
+shooting,shooting,Double Trap,male
+shooting,shooting,Skeet,male
+shooting,shooting,Trap,male
+table tennis,table tennis,Singles,female
+table tennis,table tennis,Team,female
+table tennis,table tennis,Singles,male
+table tennis,table tennis,Team,male
+taekwondo,taekwondo,Women +67kg,female
+taekwondo,taekwondo,Women -49kg,female
+taekwondo,taekwondo,Women -57kg,female
+taekwondo,taekwondo,Women -67kg,female
+taekwondo,taekwondo,Men +80kg,male
+taekwondo,taekwondo,Men -58kg,male
+taekwondo,taekwondo,Men -68kg,male
+taekwondo,taekwondo,Men -80kg,male
+tennis,tennis,Doubles,female
+tennis,tennis,Singles,female
+tennis,tennis,Doubles,male
+tennis,tennis,Singles,male
+tennis,tennis,Doubles,mixed
+triathlon,triathlon,Women,female
+triathlon,triathlon,Men,male
+volleyball,beach volleyball,Women,female
+volleyball,beach volleyball,Men,male
+volleyball,volleyball,Women,female
+volleyball,volleyball,Men,male
+weightlifting,weightlifting,Women's +75kg,female
+weightlifting,weightlifting,Women's 48kg,female
+weightlifting,weightlifting,Women's 53kg,female
+weightlifting,weightlifting,Women's 58kg,female
+weightlifting,weightlifting,Women's 63kg,female
+weightlifting,weightlifting,Women's 69kg,female
+weightlifting,weightlifting,Women's 75kg,female
+weightlifting,weightlifting,Men's +105kg,male
+weightlifting,weightlifting,Men's 105kg,male
+weightlifting,weightlifting,Men's 56kg,male
+weightlifting,weightlifting,Men's 62kg,male
+weightlifting,weightlifting,Men's 69kg,male
+weightlifting,weightlifting,Men's 77kg,male
+weightlifting,weightlifting,Men's 85kg,male
+weightlifting,weightlifting,Men's 94kg,male
+wrestling,freestyle,Freestyle 48 kg,female
+wrestling,freestyle,Freestyle 53 kg,female
+wrestling,freestyle,Freestyle 58 kg,female
+wrestling,freestyle,Freestyle 63 kg,female
+wrestling,freestyle,Freestyle 69 kg,female
+wrestling,freestyle,Freestyle 75 kg,female
+wrestling,freestyle,Freestyle 125 kg,male
+wrestling,freestyle,Freestyle 57 kg,male
+wrestling,freestyle,Freestyle 65 kg,male
+wrestling,freestyle,Freestyle 74 kg,male
+wrestling,freestyle,Freestyle 86 kg,male
+wrestling,freestyle,Freestyle 97 kg,male
+wrestling,greco roman,Greco-Roman 130 kg,male
+wrestling,greco roman,Greco-Roman 59 kg,male
+wrestling,greco roman,Greco-Roman 66 kg,male
+wrestling,greco roman,Greco-Roman 75 kg,male
+wrestling,greco roman,Greco-Roman 85 kg,male
+wrestling,greco roman,Greco-Roman 98 kg,male
