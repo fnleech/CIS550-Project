@@ -20,8 +20,10 @@ CREATE TABLE Country (
  CID VARCHAR(12), 
  Name VARCHAR(80), 
  Continent VARCHAR(50), 
- Population VARCHAR(10), 
+ Population VARCHAR(50), 
  GDP VARCHAR(25),  
+PM10 VARCHAR(10), 
+PM25 VARCHAR(10),
  Primary Key (CID)
 );
 

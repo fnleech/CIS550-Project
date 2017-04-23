@@ -79,7 +79,7 @@ for (i in 1:nrow(host)) {
    finalroles = rbind.data.frame(rowsuse, finalroles)
 }
 
-
+write.csv(finalroles, "participates.csv")
 
 
 
