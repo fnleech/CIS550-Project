@@ -1,7 +1,7 @@
 CREATE TABLE Olympics (
- Year INTEGER, 
- Opening ceremony Date, 
- Closing ceremony Date,
+ Year number(10), 
+ Opening_ceremony date, 
+ Closing_ceremony date,
  Cost VARCHAR(25), 
  Primary Key (Year)
 );
@@ -13,7 +13,7 @@ CREATE TABLE Participates (
  Primary Key (Year, CID, Role),
  Foreign Key (Year) References Olympics(Year),
  Foreign Key (CID) References Country(CID),
- CHECK (role IN ('host','participate','both', 'none')),
+ CHECK (role IN ('host','participate','both', 'none'))
 );
 
 CREATE TABLE Country (
