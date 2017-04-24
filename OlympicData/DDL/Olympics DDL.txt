@@ -7,13 +7,13 @@ CREATE TABLE Olympics (
 );
 
 CREATE TABLE Participates (
- Year INTEGER,
+ Year VARCHAR(12), 
  CID VARCHAR(12), 
  Role VARCHAR(25), 
  Primary Key (Year, CID, Role),
  Foreign Key (Year) References Olympics(Year),
  Foreign Key (CID) References Country(CID),
- CHECK (role IN ('host','participate','both', 'none'))
+ CHECK (role IN ('participant','both'))
 );
 
 CREATE TABLE Country (
@@ -30,11 +30,11 @@ CREATE TABLE Country (
 CREATE TABLE Athlete (
  AID VARCHAR(25), 
  FullName VARCHAR(120), 
- DOB VARCHAR(25), 
+ DOB VARCHAR(50), 
  Gender VARCHAR(50), 
  Height VARCHAR(50), 
  Weight VARCHAR(50), 
- Primary Key (AID, DOB)
+ Primary Key (AID, FullName)
 );
 
 CREATE TABLE From ( 
