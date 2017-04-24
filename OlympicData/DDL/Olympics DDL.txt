@@ -1,7 +1,7 @@
 CREATE TABLE Olympics (
- Year number(10), 
- Opening_ceremony date, 
- Closing_ceremony date,
+ Year VARCHAR(12), 
+ Opening_ceremony VARCHAR(25), 
+ Closing_ceremony VARCHAR(25), 
  Cost VARCHAR(25), 
  Primary Key (Year)
 );
