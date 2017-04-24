@@ -1,19 +1,7 @@
 CREATE TABLE Olympics (
-<<<<<<< Updated upstream
  Year VARCHAR(12), 
  Opening_ceremony VARCHAR(25), 
  Closing_ceremony VARCHAR(25), 
-=======
-<<<<<<< HEAD
- Year INTEGAR(10), 
- Opening_ceremony date, 
- Closing_ceremony date,
-=======
- Year VARCHAR(12), 
- Opening_ceremony VARCHAR(25), 
- Closing_ceremony VARCHAR(25), 
->>>>>>> origin/master
->>>>>>> Stashed changes
  Cost VARCHAR(25), 
  Primary Key (Year)
 );
@@ -25,11 +13,7 @@ CREATE TABLE Participates (
  Primary Key (Year, CID, Role),
  Foreign Key (Year) References Olympics(Year),
  Foreign Key (CID) References Country(CID),
-<<<<<<< HEAD
  CHECK (role IN ('participant','both'))
-=======
- CHECK (role IN ('participant’,’both'))
->>>>>>> e3f9f39a66da28f88db4d50983bfdbb186746c4c
 );
 
 CREATE TABLE Country (
@@ -38,45 +22,29 @@ CREATE TABLE Country (
  Continent VARCHAR(50), 
  Population VARCHAR(50), 
  GDP VARCHAR(25),  
-PM10 VARCHAR(10), 
-PM25 VARCHAR(10),
+ PM10 VARCHAR(20), 
+ PM25 VARCHAR(20),
  Primary Key (CID)
 );
 
 CREATE TABLE Athlete (
-<<<<<<< HEAD
- AID INTEGER,
- LastName VARCHAR(50),
- FirstName VARCHAR(50),  
- DOB Date, 
- Gender VARCHAR(25), 
- Height VARCHAR(25), 
- Weight VARCHAR(25), 
- Primary Key (ID)
-=======
  AID VARCHAR(25), 
  FullName VARCHAR(120), 
  DOB VARCHAR(50), 
  Gender VARCHAR(50), 
  Height VARCHAR(50), 
  Weight VARCHAR(50), 
-<<<<<<< HEAD
  Primary Key (AID, FullName)
-=======
- Primary Key (AID, DOB)
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
->>>>>>> e3f9f39a66da28f88db4d50983bfdbb186746c4c
 );
 
-CREATE TABLE From (
- CID VARCHAR(12), 
- AID INTEGER,
- Primary Key (CID, AID)
- Foreign Key (CID) References Country(CID),
- Foreign Key (AID) References Athlete(AID)
+CREATE TABLE AFromC ( 
+ AID VARCHAR(25),
+ AName VARCHAR(120), 
+ CID VARCHAR(12),
+ CName VARCHAR(12),    
+ Primary Key (AID, AName, CID),
+ Foreign Key (AID, AName) References Athlete(AID, AName),
+ Foreign Key (CID) References Country(CID)
 );
 
 CREATE TABLE Sport ( 
@@ -86,25 +54,11 @@ CREATE TABLE Sport (
 );
 
 CREATE TABLE Compete_in (
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
- AID INTEGER,
- SName VARCHAR(25), 
- SGender VARCHAR(25), 
- Discipline VARCHAR(25), 
- Event VARCHAR(25), 
-=======
->>>>>>> Stashed changes
  AID VARCHAR(25),
  OlympicNo VARCHAR(25), 
  Location VARCHAR(25), 
  Discipline VARCHAR(50), 
  Event VARCHAR(100), 
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
  Medal VARCHAR(25), 
  Primary Key (AID, Discipline, Event, Medal),
  Foreign Key (Discipline, Event) References Sport(Discipline, Event),
