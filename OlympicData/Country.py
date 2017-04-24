@@ -4,10 +4,10 @@ import cx_Oracle
 #with python, use CSV reader 
 import csv
 rows = []
-with open('C:\Studying Folder\CIS 550\pj\CIS550-Project\FinalData\Country.csv', 'rb') as csvfile:
+with open('C:\Studying Folder\CIS 550\pj\CIS550-Project\OlympicData\FinalData\Country_v2.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for line in spamreader:
-        row = (line[0], line[1])
+        row = (line[0], line[1], line[2], line[3], line[4], line[5], line[6])
         rows.append(row)
 
 # insert all of the rows as a batch and commit

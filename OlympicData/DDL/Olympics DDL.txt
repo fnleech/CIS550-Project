@@ -22,25 +22,25 @@ CREATE TABLE Country (
  Continent VARCHAR(50), 
  Population VARCHAR(50), 
  GDP VARCHAR(25),  
-PM10 VARCHAR(10), 
-PM25 VARCHAR(10),
+ PM10 VARCHAR(20), 
+ PM25 VARCHAR(20),
  Primary Key (CID)
 );
 
 CREATE TABLE Athlete (
- AID INTEGER,
- LastName VARCHAR(50),
- FirstName VARCHAR(50),  
- DOB Date, 
- Gender VARCHAR(25), 
- Height VARCHAR(25), 
- Weight VARCHAR(25), 
- Primary Key (ID)
+ AID VARCHAR(25), 
+ FullName VARCHAR(120), 
+ DOB VARCHAR(25), 
+ Gender VARCHAR(50), 
+ Height VARCHAR(50), 
+ Weight VARCHAR(50), 
+ Primary Key (AID)
 );
 
-CREATE TABLE From (
+CREATE TABLE From ( 
+ AID VARCHAR(25),
+ CName VARCHAR(12),  
  CID VARCHAR(12), 
- AID INTEGER,
  Primary Key (CID, AID)
  Foreign Key (CID) References Country(CID),
  Foreign Key (AID) References Athlete(AID)
@@ -55,7 +55,7 @@ CREATE TABLE Sport (
 );
 
 CREATE TABLE Compete_in (
- AID INTEGER,
+ AID VARCHAR(25),
  SName VARCHAR(25), 
  SGender VARCHAR(25), 
  Discipline VARCHAR(25), 
