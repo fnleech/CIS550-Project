@@ -1,5 +1,5 @@
 CREATE TABLE Olympics (
- Year number(10), 
+ Year INTEGAR(10), 
  Opening_ceremony date, 
  Closing_ceremony date,
  Cost VARCHAR(25), 
