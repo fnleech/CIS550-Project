@@ -14,7 +14,7 @@ Canoeing,Men's Kayak Singles 500 metres
 Tennis,Men's Singles
 Canoeing,Women's Kayak Fours 500 metres
 Canoeing,Men's Canadian Doubles 1000 metres
-Canoeing,Men's Kayak Relay 4 ля 500 metres
+Canoeing,Men's Kayak Relay 4 ║а 500 metres
 Fencing,Men's Sabre Team
 Football,Women's Football
 Sailing,Mixed One Person Dinghy
@@ -44,22 +44,22 @@ Badminton,Women's Singles
 Canoeing,Women's Kayak Singles Slalom
 Table Tennis,Men's Doubles
 Table Tennis,Men's Singles
-Athletics,Men's 4 ля 100 metres Relay
+Athletics,Men's 4 ║а 100 metres Relay
 Tennis,Men's Doubles
 Weightlifting,Men's Middle Heavyweight
 Weightlifting,Men's Heavyweight I
 Weightlifting,Men's Middleweight
 Weightlifting,Men's Heavyweight II
 Weightlifting,Men's Bantamweight
-Swimming,Women's 4 ля 100 metres Medley Relay
-Swimming,Women's 4 ля 100 metres Freestyle Relay
+Swimming,Women's 4 ║а 100 metres Medley Relay
+Swimming,Women's 4 ║а 100 metres Freestyle Relay
 Swimming,Women's 100 metres Breaststroke
 Swimming,Women's 200 metres Breaststroke
 Swimming,Women's 200 metres Freestyle
 Swimming,Men's 50 metres Freestyle
 Swimming,Men's 400 metres Individual Medley
 Swimming,Women's 200 metres Butterfly
-Swimming,Men's 4 ля 200 metres Freestyle Relay
+Swimming,Men's 4 ║а 200 metres Freestyle Relay
 Boxing,Men's Light Middleweight
 Boxing,Men's Lightweight
 Boxing,Men's Light Welterweight
@@ -75,7 +75,7 @@ Wrestling,Men's Super Heavyweight Freestyle
 Wrestling,Men's Lightweight Greco Roman
 Swimming,Men's 100 metres Butterfly
 Judo,Men's Half Lightweight
-Athletics,Men's 4 ля 400 metres Relay
+Athletics,Men's 4 ║а 400 metres Relay
 Judo,Men's Lightweight
 Cycling,Men's Road Race Individual
 Cycling,Men's Points Race
@@ -111,7 +111,7 @@ Athletics,Men's 800 metres
 Sailing,Men's Two Person Dinghy
 Swimming,Men's 100 metres Backstroke
 Swimming,Men's 200 metres Backstroke
-Swimming,Men's 4 ля 100 metres Medley Relay
+Swimming,Men's 4 ║а 100 metres Medley Relay
 Athletics,Men's 400 metres
 Table Tennis,Men's Team
 Archery,Women's Individual
@@ -121,7 +121,7 @@ Archery,Men's Team
 Swimming,Men's 200 metres Individual Medley
 Swimming,Men's 100 metres Breaststroke
 Swimming,Men's 200 metres Breaststroke
-Swimming,Men's 4 ля 100 metres Freestyle Relay
+Swimming,Men's 4 ║а 100 metres Freestyle Relay
 Swimming,Men's 200 metres Freestyle
 Swimming,Men's 200 metres Butterfly
 Swimming,Men's 400 metres Freestyle
@@ -129,7 +129,7 @@ Swimming,Men's 1500 metres Freestyle
 Swimming,Men's 100 metres Freestyle
 Swimming,Women's 400 metres Individual Medley
 Swimming,Women's 200 metres Individual Medley
-Swimming,Women's 4 ля 200 metres Freestyle Relay
+Swimming,Women's 4 ║а 200 metres Freestyle Relay
 Swimming,Women's 400 metres Freestyle
 Swimming,Women's 800 metres Freestyle
 Swimming,Women's 100 metres Butterfly
@@ -204,10 +204,10 @@ Shooting,Men's Running Target 10 metres
 Athletics,Women's Heptathlon
 Athletics,Women's Long Jump
 Athletics,Women's Triple Jump
-Athletics,Women's 4 ля 400 metres Relay
+Athletics,Women's 4 ║а 400 metres Relay
 Athletics,Women's 100 metres
 Athletics,Women's 200 metres
-Athletics,Women's 4 ля 100 metres Relay
+Athletics,Women's 4 ║а 100 metres Relay
 Athletics,Women's Discus Throw
 Athletics,Women's 800 metres
 Athletics,Women's 1500 metres
@@ -368,7 +368,7 @@ Shooting,Mixed Skeet
 Shooting,Men's Running Target 50 metres
 Shooting,Mixed Free Rifle Three Positions 300 metres
 Synchronized Swimming,Women's Solo
-Swimming,Men's 4 ▐Ц_ 200 metres Freestyle Relay
+Swimming,Men's 4 ║а 200 metres Freestyle Relay
 Weightlifting,Men's Flyweight
 Wrestling,Men's Light Flyweight Freestyle
 Wrestling,Men's Flyweight Freestyle
@@ -381,4 +381,4 @@ Sailing,Mixed Windsurfer
 Athletics,Women's 10 kilometres Walk
 Athletics,Women's 80 metres Hurdles
 Athletics,Women's Pentathlon
-Athletics,Women's 4 ▐Ц_ 100 metres Relay
+Athletics,Women's 4 ║а 100 metres Relay

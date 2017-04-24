@@ -34,16 +34,15 @@ CREATE TABLE Athlete (
  Gender VARCHAR(50), 
  Height VARCHAR(50), 
  Weight VARCHAR(50), 
- Primary Key (AID, FullName)
+ Primary Key (AID)
 );
 
 CREATE TABLE AFromC ( 
  AID VARCHAR(25),
- AName VARCHAR(120), 
  CID VARCHAR(12),
  CName VARCHAR(12),    
- Primary Key (AID, AName, CID),
- Foreign Key (AID, AName) References Athlete(AID, AName),
+ Primary Key (AID, CID),
+ Foreign Key (AID) References Athlete(AID),
  Foreign Key (CID) References Country(CID)
 );
 
@@ -53,17 +52,17 @@ CREATE TABLE Sport (
  Primary Key (Discipline, Event)
 );
 
-CREATE TABLE Compete_in (
+CREATE TABLE CompeteIn (
  AID VARCHAR(25),
  OlympicNo VARCHAR(25), 
  Location VARCHAR(25), 
  Discipline VARCHAR(50), 
  Event VARCHAR(100), 
  Medal VARCHAR(25), 
- Primary Key (AID, Discipline, Event, Medal),
+ Primary Key (AID, OlympicNo, Discipline, Event, Medal),
  Foreign Key (Discipline, Event) References Sport(Discipline, Event),
  Foreign Key (AID) References Athlete(AID),
- CHECK (Medal IN ('Gold','Silver','Bronze', 'None')
+ CHECK (Medal IN ('Gold','Silver','Bronze', 'None'))
 );
 
 
