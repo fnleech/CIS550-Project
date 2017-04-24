@@ -82,5 +82,8 @@ for (i in 1:nrow(host)) {
 write.csv(finalroles, "participates.csv")
 
 
+part=read.csv("participates.csv", header = F)
+mergefinal = merge.data.frame(part, IOC, by.x = "V1", by.y = "code", all.x = T)
+
 
 
