@@ -1,0 +1,17 @@
+{
+  "name": "MyAppNode",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "async": "^2.3.0",
+    "express": "3.2.6",
+    "jade": "*",
+    "jade-bootstrap": "*",
+    "mysql": "*",
+    "nib": "*",
+    "stylus": "*"
+  }
+}

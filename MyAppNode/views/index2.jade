@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+    head
+        title CIS 550 Project
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        nav.navbar.navbar-inverse
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='home') CIS 550 Project
+                #myNavbar.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href='home') Home
+                        li
+                            a(href='games') Olympic Games
+                        li
+                            a(href='sports') Sports
+                        li
+                            a(href='athletes') Athletes
+                        li
+                            a(href='countries') Countries
+                        li
+                            a(href='news') News
+        a.twitter-timeline(height='500', width='300', href='https://twitter.com/Olympics') Tweets by @Olympics
+        script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
+        footer.container-fluid.text-center
+            p Footer Text

@@ -1,0 +1,19 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+append styles
+    // Custom styles for this template
+    link(href='../css/navbar-static-top.css', rel='stylesheet')
+block body
+    header
+    // Static navbar
+    +navbar-static("HW2 - CIS550","navbar")
+        block navbarcontent
+    .container
+        // Main component for a primary marketing message or call to action
+        .jumbotron
+            .main-content
+                block content
+            .sidebar
+                block sidebar
+    footer.footer
+        .container
+            p.text-muted Running on node with Express, Jade, Bootstrap
