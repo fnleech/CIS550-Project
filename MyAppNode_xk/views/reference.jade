@@ -1,0 +1,45 @@
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /actor once
+// the user hits Submit
+block navbarcontent
+    +nav_item("/") Sample Work
+    //+nav_item("/") Your Work
+    +nav_item("/reference", "active") Reference
+    p Welcome!
+    +navbar("Menu", "dropdown_menu", "inverse")
+      +nav_item("/") Home
+      +nav_item_dropdown("#")(label="Info on Olympics")
+        +nav_item("#") Olympics
+        +nav_item("#") Country
+        +nav_item("#") Sporting Events
+        +nav_item("#") Athletes
+        //+nav_divider
+        //+nav_header Nav header
+        //+nav_item("#") Separated link
+      +nav_item("/quiz") Quiz
+      +nav_item("/") About
+      +nav_item("/") Contact
+      +nav_item("/reference", "active") Reference
+
+block content
+  .container
+    +list-group-links([{text:"Reference",url:"#"},
+                       {text:"The International Olympic Committee",url:"https://www.olympic.org"},
+                       {text:"Atheletes Database",url:"http://www.sports-reference.com/olympics/athletes/"},
+                       {text:"Country Databaes",url:"#"},
+                       {text:"Air Quality",url:"http://www.who.int/phe/health_topics/outdoorair/databases/cities/en/"},
+                       {text:"Sporting Events Reference",url:"#"},],
+                       0)
+  br
+  br
+
+  //.container
+  //p
+  //  h5 You may use the drop down menu in "Your work".
+  //form(method="get", action="/person")
+    //p
+      //select(name = "name")
+        //option(value="awest@gmail.com") awest@gmail.com
+        //option(value="lizashton@yahoo.com") lizashton@yahoo.com
+    //input(type='submit', value='Submit')
