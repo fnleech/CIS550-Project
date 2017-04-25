@@ -4,7 +4,7 @@ import cx_Oracle
 #with python, use CSV reader 
 import csv
 rows = []
-with open('C:\Studying Folder\CIS 550\pj\CIS550-Project\OlympicData\FinalData\participates.csv', 'rb') as csvfile:
+with open('C:\Studying Folder\CIS 550\pj\CIS550-Project\OlympicData\FinalData\participates_v2.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for line in spamreader:
         row = (line[1], line[0], line[2])
