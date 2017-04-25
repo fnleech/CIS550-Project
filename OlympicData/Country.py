@@ -7,7 +7,14 @@ rows = []
 with open('C:\Studying Folder\CIS 550\pj\CIS550-Project\OlympicData\FinalData\Country_v3.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for line in spamreader:
-        row = (line[0], line[1], line[4], line[2], line[3], line[5], line[6])
+        if (line[2] == "NA" and line[3] == "NA"):
+            row = (line[0], line[1], line[4], -1, -1, line[5], line[6])
+        elif (line[2] == "NA"):
+            row = (line[0], line[1], line[4], -1, float(line[3]), line[5], line[6])
+        elif (line[3] == "NA"):
+            row = (line[0], line[1], line[4], float(line[2]),-1, line[5], line[6])
+        else:
+            row = (line[0], line[1], line[4], float(line[2]), float(line[3]), line[5], line[6])
         rows.append(row)
 
 # insert all of the rows as a batch and commit

@@ -1,13 +1,13 @@
 CREATE TABLE Olympics (
- Year VARCHAR(12), 
- Opening_ceremony VARCHAR(25), 
- Closing_ceremony VARCHAR(25), 
- Cost VARCHAR(25), 
+ Year NUMBER, 
+ Opening_ceremony DATE, 
+ Closing_ceremony DATE, 
+ Cost NUMBER, 
  Primary Key (Year)
 );
 
 CREATE TABLE Participates (
- Year VARCHAR(12), 
+ Year NUMBER, 
  CID VARCHAR(12), 
  Role VARCHAR(25), 
  Primary Key (Year, CID, Role),
@@ -20,20 +20,20 @@ CREATE TABLE Country (
  CID VARCHAR(12), 
  Name VARCHAR(80), 
  Continent VARCHAR(50), 
- Population VARCHAR(50), 
- GDP VARCHAR(25),  
- PM10 VARCHAR(20), 
- PM25 VARCHAR(20),
+ Population NUMBER, 
+ GDP NUMBER,  
+ PM10 VARCHAR(25), 
+ PM25 VARCHAR(25),
  Primary Key (CID)
 );
 
 CREATE TABLE Athlete (
- AID VARCHAR(25), 
+ AID VARCHAR(25),
  FullName VARCHAR(120), 
- DOB VARCHAR(50), 
+ DOB VARCHAR(30),
  Gender VARCHAR(50), 
- Height VARCHAR(50), 
- Weight VARCHAR(50), 
+ Height NUMBER, 
+ Weight NUMBER, 
  Primary Key (AID)
 );
 
@@ -53,7 +53,7 @@ CREATE TABLE Sport (
 
 CREATE TABLE Result (
  AID VARCHAR(25),
- Year VARCHAR(12),
+ Year NUMBER,
  Discipline VARCHAR(50),   
  Event VARCHAR(100), 
  Medal VARCHAR(25), 

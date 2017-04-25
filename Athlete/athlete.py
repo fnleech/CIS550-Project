@@ -1,13 +1,21 @@
 #oracle connection separate package we need to install
 import cx_Oracle
+import datetime
 
 #with python, use CSV reader 
 import csv
 rows = []
-with open('athlete.csv', 'rb') as csvfile:
+with open('athlete_v5.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for line in spamreader:
-        row = (line[0], line[1], line[2], line[3], line[4], line[5])
+        if (line[4] == "n/a" and line[5] == "n/a"):
+            row = (line[0], line[1], line[2], line[3], -1, -1)
+        elif (line[4] == "n/a" ):
+            row = (line[0], line[1], line[2], line[3], -1, float(line[5]))
+        elif (line[5] == "n/a"):
+            row = (line[0], line[1], line[2], line[3], float(line[4]), -1)
+        else:
+            row = (line[0], line[1], line[2], line[3], float(line[4]), float(line[5]))
         rows.append(row)
 
 # insert all of the rows as a batch and commit
