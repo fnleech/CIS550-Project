@@ -1,0 +1,15 @@
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /person once
+// the user hits Submit
+block navbarcontent
+    +nav_item("/","active") Sample Work
+    //+nav_item("/") Your Work
+    +nav_item("/reference") Reference
+block content
+  p
+    +icon-primary("search")
+    |  #{title}:
+    form(method='get', action='/person')
+      input(name='name', value='')
+      input(type='submit', value='Submit')

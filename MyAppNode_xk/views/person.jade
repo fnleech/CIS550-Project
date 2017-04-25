@@ -1,0 +1,32 @@
+// Jade file to specify output of a persons list
+// Inherits from layout
+extend layout
+block navbarcontent
+    +nav_item("/","active") Sample Work
+    +nav_item("/") Your Work
+    +nav_item("/reference") Reference
+block content
+  p
+    +icon-primary("search")
+    |  #{title}:
+  // Create a table with one row per result
+  form(method="get", action="/person")
+  p
+    select(name = "name")
+      - for (var inx = 0; inx < results.length; inx++)
+        option #{results[inx].login}
+    table
+      - for (var inx = 0; inx < results.length; inx++)
+        tr
+          td=results[inx].login+" "
+          td &nbsp;
+          td=results[inx].name
+          td &nbsp;
+          td=results[inx].sex
+          td &nbsp;
+          td=results[inx].relationshipStatus
+          td &nbsp;
+          td=results[inx].birthyear
+  // Put a click button that lets us return to the index page 
+  form(method='get', action='/')
+      input(type='submit', value='Return')
