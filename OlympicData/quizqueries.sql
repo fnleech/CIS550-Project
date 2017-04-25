@@ -56,6 +56,16 @@ FROM Participates P
 	ON A.AID = R.AID
 Group BY P.Year
 )
+SELECT C.name, ATC.Year, O.cost, ATC.NumAthletes
+FROM ath_count ATC
+	INNER JOIN Participates P
+	ON ATC.Year = P.Year
+	INNER JOIN Olympics O
+	ON O.Year = ATC.Year
+	INNER JOIN Country C
+	ON C.CID = P.CID
+Where P.role = 'both';	
+)
 SELECT C.name, ATC.Year, O.cost/ATC.NumAthletes AS CostPerATH
 FROM ath_count ATC
 	INNER JOIN Participates P
@@ -66,6 +76,5 @@ FROM ath_count ATC
 	ON C.CID = P.CID
 Where P.role = 'both';	
 )
-
 
 # Which olympics was most expensive per athlete?
