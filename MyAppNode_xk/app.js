@@ -22,7 +22,7 @@ init_app(app);
 // When we get a request for {app}/ we should call routes/index.js
 app.get('/', routes.do_work);
 app.get('/reference', routes.do_ref);
-app.get('/quiz', routes.do_quiz)
+app.get('/quiz', routes.do_quiz);
 // when we get a request for {app/person} we should call routes/person.js
 app.get('/person', person.do_work);
 
