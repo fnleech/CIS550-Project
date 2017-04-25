@@ -2,8 +2,8 @@ Archery,Women's Individual
 Archery,Women's Team
 Archery,Men's Individual
 Archery,Men's Team
-Athletics,Men's 4 ¡Á 100 metres Relay
-Athletics,Men's 4 ¡Á 400 metres Relay
+Athletics,Men's 4 x 100 metres Relay
+Athletics,Men's 4 x 400 metres Relay
 Athletics,Men's Javelin Throw
 Athletics,Men's Marathon
 Athletics,Men's 800 metres
@@ -14,10 +14,10 @@ Athletics,Women's Shot Put
 Athletics,Women's Heptathlon
 Athletics,Women's Long Jump
 Athletics,Women's Triple Jump
-Athletics,Women's 4 ¡Á 400 metres Relay
+Athletics,Women's 4 x 400 metres Relay
 Athletics,Women's 100 metres
 Athletics,Women's 200 metres
-Athletics,Women's 4 ¡Á 100 metres Relay
+Athletics,Women's 4 x 100 metres Relay
 Athletics,Women's Discus Throw
 Athletics,Women's 800 metres
 Athletics,Women's 1500 metres
@@ -57,7 +57,7 @@ Athletics,Women's 3000 metres
 Athletics,Women's 10 kilometres Walk
 Athletics,Women's 80 metres Hurdles
 Athletics,Women's Pentathlon
-Athletics,Women's 4 ¡Á 100 metres Relay
+Athletics,Women's 4 x 100 metres Relay
 Badminton,Men's Singles
 Badminton,Mixed Doubles
 Badminton,Men's Doubles
@@ -95,7 +95,7 @@ Canoeing,Women's Kayak Singles 500 metres
 Canoeing,Men's Kayak Singles 500 metres
 Canoeing,Women's Kayak Fours 500 metres
 Canoeing,Men's Canadian Doubles 1000 metres
-Canoeing,Men's Kayak Relay 4 ¡Á 500 metres
+Canoeing,Men's Kayak Relay 4 x 500 metres
 Canoeing,Men's Canadian Singles 1000 metres
 Canoeing,Men's Canadian Singles Slalom
 Canoeing,Women's Kayak Singles Slalom
@@ -151,18 +151,12 @@ Fencing,Men's Sabre Team
 Fencing,Women's Foil Individual
 Fencing,Women's Foil Team
 Fencing,Men's Sabre Individual
-Fencing,Women's ÌäpÌ©e Individual
-Fencing,Women's ÌäpÌ©e Team
+Fencing,Women's epee Individual
 Fencing,Women's Sabre Individual
 Fencing,Women's Sabre Team
 Fencing,Men's Foil Individual
 Fencing,Men's Foil Team
-Fencing,Men's ÌäpÌ©e Individual
-Fencing,Men's ÌäpÌ©e Team
-Fencing,Men's èãÁpe Individual
-Fencing,Men's èãÁpe Team
-Fencing,Women's èãÁpe Team
-Fencing,Women's èãÁpe Individual
+Fencing,Men's epee Individual
 Football,Women's Football
 Football,Men's Football
 Gymnastics,Women's Balance Beam
