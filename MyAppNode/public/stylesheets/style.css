@@ -4,7 +4,7 @@
 /*
  * Grab a custom font from Google
  */
-@import url("http://fonts.googleapis.com/css?family=Quicksand");
+@import url("http://fonts.googleapis.com/css?family=Arial");
 /*
  * Nib provides a CSS reset
  */
@@ -78,7 +78,7 @@ td {
 body {
   line-height: 1;
   color: #000;
-  background: #fff;
+  background: #FFFFFF;
 }
 ol,
 ul {
@@ -105,20 +105,20 @@ a img {
  */
 body {
   font-family: 'Georgia';
-  background-color: #fafafa;
+  background-color: #FFFFFF;
   color: #444;
 }
 header {
   font-family: 'Quicksand';
   padding: 50px 10px;
-  color: #f1f1f1;
+  color: #FFFFFF;
   font-size: 25px;
   text-align: center;
 /*
    * Note the use of the `main-color`
    * variable and the `darken` function
    */
-  background-color: #000;
+  background-color: #FFFFFF;
   border-bottom: 1px solid #000;
   text-shadow: 0px -1px 0px #000;
 }

@@ -20,7 +20,7 @@ Where MedalCount = (SELECT MAX(AM1.MedalCount)
 	where AM1.year = 2012);
 
 
-# What's the best height to win a gold medal in swimming if you're a guy?
+# What's the "best height" to win a gold medal in swimming if you're a guy?
 WITH ath_medals AS(
 SELECT A.Height, R.Discipline, count(*) as MedalCount
 FROM result R
