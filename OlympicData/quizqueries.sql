@@ -20,9 +20,9 @@ Where MedalCount = (SELECT MAX(AM1.MedalCount)
 	where AM1.year = 2012);
 
 
-# who is the oldest swimmer that won the most number of gold medals in swimming in 2012?
+# What's the best height to win a gold medal in swimming if you're a guy?
 WITH ath_medals AS(
-SELECT A.AID,A.name, A.DOB, P.Year, R.Medal, R.event, count(*) as MedalCount
+SELECT A.Height, R.Discipline, count(*) as MedalCount
 FROM result R
 	INNER JOIN athlete A
 		ON A.AID = R.AID
@@ -30,23 +30,15 @@ FROM result R
 		ON A.AID = AFC.AID
 	INNER JOIN Participates P
 		ON P.CID = AFC.CID
-Where P.year = 2012 AND R.event = 'Swimming'
-GROUP BY A.name, A.age, P.Year, R.Medal, R.event
+Where A.Gender = 'Male'AND R.Discipline = 'Swimming' AND R.Medal = 'Gold' AND A.Height != -1
+GROUP BY  R.Discipline, A.Height
 )
-WITH ath_final AS(
-SELECT TRUNC((SYSDATA-TO_DATE(ATM.DOB, 'YYYY-MM-DD'))/365) AS Age
-FROM ath_medals ATM
-)
-SELECT ATM.name, AFM.AGE
-FROM ath_medals ATM
-	Inner join ath_final AFM
-	ON ATM.AID = AFM.AID
-Where ATM.MedalCount = (SELECT MAX(AM1.MedalCount)
-	from ath_medals AM1
-	where AM1.year = 2012) and AFM.AGE = (SELECT MAX(ATM1.AGE)
-	from ath_final ATM1);
+Select AM.Height
+From ath_medals AM
+Where AM.MedalCount = (SELECT MAX(AM2.MedalCount)
+	from ath_medals AM2); 
 
-# What is cost per athlete for each of the olympics?
+# Which olympics was most expensive per athlete?
 WITH ath_count AS(
 SELECT P.Year, count(*) as NumAthletes
 FROM Participates P
@@ -56,7 +48,8 @@ FROM Participates P
 	ON A.AID = R.AID
 Group BY P.Year
 )
-SELECT C.name, ATC.Year, O.cost, ATC.NumAthletes
+, CostA AS (
+SELECT C.name, ATC.Year, (O.cost/ATC.NumAthletes) * 1000000000 AS CostPerATH
 FROM ath_count ATC
 	INNER JOIN Participates P
 	ON ATC.Year = P.Year
@@ -64,17 +57,54 @@ FROM ath_count ATC
 	ON O.Year = ATC.Year
 	INNER JOIN Country C
 	ON C.CID = P.CID
-Where P.role = 'both';	
+Where P.role = 'both' and O.cost != -1
+ORDER BY ATC.Year ASC
 )
-SELECT C.name, ATC.Year, O.cost/ATC.NumAthletes AS CostPerATH
-FROM ath_count ATC
-	INNER JOIN Participates P
-	ON ATC.Year = P.Year
-	INNER JOIN Olympics O
-	ON O.Year = ATC.Year
-	INNER JOIN Country C
-	ON C.CID = P.CID
-Where P.role = 'both';	
-)
+Select CA.name 
+From CostA CA
+WHERE CA.CostPerATH = (SELECT (MAX(CA1.CostPerATH)) FROM CostA CA1); 	
 
-# Which olympics was most expensive per athlete?
+
+#  In how many summer olympics since 1960-2012 did the US take home the most number of gold medals? 
+With sportmedal AS(
+Select R.Discipline, R.Year,AFC.CID,Count(*) AS MedPerS
+From Athlete A
+	Inner Join Result R
+	on A.Aid = R.Aid
+	Inner Join AFromC AFC
+	on A.Aid = AFC.Aid
+Where R.Medal = 'Gold'
+Group by  R.Discipline, R.Year,AFC.CID
+)
+, GMCount AS(Select SM.*
+From sportmedal SM
+Inner join (Select Year, MAX(MedPers) as MaxMedals
+	From sportmedal 
+	Group by Year) groupedSM
+ON SM.Year = groupedSM.Year AND SM.MedPers = groupedSM.MaxMedals)
+Select Count(*) AS USAwins
+From GMCount GMC
+Where GMC.CID = 'USA'; 
+
+# How many gold medals has the smallest (by population) IOC Country won? What is the country?
+WITH athmedals AS(
+SELECT AFC.CID, R.Medal, count(*) as MedalCount
+FROM result R
+	INNER JOIN athlete A
+		ON A.AID = R.AID
+	INNER JOIN afromC AFC
+		ON A.AID = AFC.AID
+	INNER JOIN Participates P
+		ON P.CID = AFC.CID
+GROUP BY AFC.CID, R.Medal
+)
+Select ATM.MedalCount, C.Name, C.Population
+From athmedals ATM
+	Inner Join Country C
+	ON C.CID = ATM.CID
+Where C.Population = (SELECT MIN(C1.Population)
+From Country C1 Where C1.Population != -1);
+
+# Which country has the highest Population per medal 
+
+
