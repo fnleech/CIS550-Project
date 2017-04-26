@@ -1,7 +1,6 @@
 extends ../node_modules/jade-bootstrap/_bootstrap
 append styles
-    // Custom styles for this template
-    link(href='../css/navbar-static-top.css', rel='stylesheet')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/stylesheet.css')
 block body
     header
     // Static navbar
@@ -14,6 +13,8 @@ block body
                 block content
             .sidebar
                 block sidebar
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+    script(type='text/javascript', src='js/quiz.js')
     footer.footer
         .container
             p.text-muted Running on node with Express, Jade, Bootstrap

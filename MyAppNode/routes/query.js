@@ -1,4 +1,4 @@
-var async = require('async');
+/*var async = require('async');
 var oracledb = require('oracledb');
 var global_res;
 var global_login;
@@ -10,6 +10,7 @@ var global_login;
 // oracledb.outFormat = oracledb.OBJECT;
 
 var doconnect = function (cb) {
+	console.log(cb);
 	oracledb.getConnection(
 		{
 			user: "cis550project",
@@ -39,7 +40,8 @@ var doquery_object = function (conn, cb) {
       if (err) {
         return cb(err, conn);
       } else {
-        output_persons(global_res, global_login, result.rows);
+		console.log(result.rows);
+        output_query(global_res, global_login, result.rows);
         return cb(null, conn);
       }
     });
@@ -64,6 +66,7 @@ function query_db(res, login) {
 				dorelease(conn);
 		});
 }
+*/
 
 // ///
 // Given a set of query results, output a table
@@ -71,8 +74,8 @@ function query_db(res, login) {
 // res = HTTP result object sent back to the client
 // name = Name to query for
 // results = List object of query results
-function output_persons(res,login,results) {
-	res.render('person.jade',
+function output_table(res,login,results) {
+	res.render('query.jade',
 		   { title: "Person with login " + login,
 		     results: results }
 	  );
@@ -81,5 +84,6 @@ function output_persons(res,login,results) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	query_db(res,req.query.name);
+	//query_db(res,req.query.name);
+	output_table(res, "", null);
 };

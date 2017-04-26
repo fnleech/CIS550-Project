@@ -5,11 +5,11 @@ extend layout
 block navbarcontent
     +nav_item("/","active") Sample Work
     +nav_item("/") Your Work
-    +nav_item("/reference") Reference
+    +nav_item("/quiz") Quiz
 block content
   p
     +icon-primary("search")
     |  #{title}:
-    form(method='get', action='/person')
+    form(method='get', action='/')
       input(name='name', value='')
       input(type='submit', value='Submit')
