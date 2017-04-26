@@ -1,0 +1,20 @@
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /actor once
+// the user hits Submit
+block navbarcontent
+    +nav_item("/") Sample Work
+    +nav_item("/") Your Work
+    +nav_item("/quiz", "active") Quiz
+block content
+    #container
+      #title
+        h1 Learning Js Properly: Project #1 - Dynamic Quiz
+      br
+      #quiz
+      #next.button
+        a(href='#') Next
+      #prev.button
+        a(href='#') Prev
+      #start.button
+        a(href='#') Start Over

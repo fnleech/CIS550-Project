@@ -4,13 +4,13 @@ extend layout
 block navbarcontent
     +nav_item("/","active") Sample Work
     +nav_item("/") Your Work
-    +nav_item("/reference") Reference
+    +nav_item("/quiz") Quiz
 block content
   p
     +icon-primary("search")
     |  #{title}:
   // Create a table with one row per result
-  form(method="get", action="/person")
+  form(method="get", action="/")
   p
     select(name = "name")
       - for (var inx = 0; inx < results.length; inx++)

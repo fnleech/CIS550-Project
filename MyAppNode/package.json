@@ -10,7 +10,6 @@
     "express": "3.2.6",
     "jade": "*",
     "jade-bootstrap": "*",
-    "mysql": "*",
     "nib": "*",
     "stylus": "*"
   }
