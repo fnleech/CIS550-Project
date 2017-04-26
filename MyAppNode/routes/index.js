@@ -7,8 +7,3 @@ exports.do_work = function(req, res){
 	  title: 'Please enter a person login' 
   });
 };
-
-
-exports.load_quiz = function(req, res){
-  res.render('quiz.jade', {});
-};

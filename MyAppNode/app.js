@@ -5,6 +5,7 @@
 var express = require('express')
   , routes = require('./routes')
   , query = require('./routes/query')
+  , quiz = require('./routes/quiz')
   , http = require('http')
   , path = require('path')
   , stylus = require("stylus")
@@ -18,9 +19,7 @@ init_app(app);
 
 // When we get a request for {app}/ we should call routes/index.js
 app.get('/', routes.do_work);
-app.get('/quiz', routes.load_quiz);
-
-// 
+app.get('/quiz', quiz.load_quiz);
 app.get('/query', query.do_work);
 
 // Listen on the port we specify
