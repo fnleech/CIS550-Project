@@ -1,69 +1,73 @@
-(function () {
+(function() {
   var questions = [{
-    question: "What is 2*5?",
+    question: "Which Summer Olympics were the most expensive?",
     choices: [2, 5, 10, 15, 20],
     correctAnswer: 2
   }, {
-    question: "What is 3*6?",
+    question: "Which Summer Olympics were the most expensive per athlete?",
     choices: [3, 6, 9, 12, 18],
     correctAnswer: 4
   }, {
-    question: "What is 8*9?",
+    question: "Which country won the most number of gold medals in the 2012 Summer Olympics",
     choices: [72, 99, 108, 134, 156],
     correctAnswer: 0
   }, {
-    question: "What is 1*7?",
+    question: "Who is the tallest swimmer with the most number of gold medals?",
     choices: [4, 5, 6, 7, 8],
     correctAnswer: 3
   }, {
-    question: "What is 8*8?",
+    question: "Who won the most number of medals in their first Summer Olympics?",
     choices: [20, 30, 40, 50, 64],
     correctAnswer: 4
   }];
-
-  var questionCounter = 0; //Tracks question number
-  var selections = []; //Array containing user choices
-  var quiz = $('#quiz'); //Quiz div object
-
-  // Display initial question
+  
+  //keep track of the question number
+  var questionCounter = 0;
+  //make an array that has the user answers
+  var selections = []; 
+  //use jquery here
+  //quiz object 
+  var quiz = $('#quiz'); 
+  
+  // Show the first question
   displayNext();
-
+  
   // Click handler for the 'next' button
   $('#next').on('click', function (e) {
     e.preventDefault();
-
-    // Suspend click listener during fade animation
-    if (quiz.is(':animated')) {
+    
+    // Get rid of clicker
+    if(quiz.is(':animated')) {        
       return false;
     }
     choose();
-
-    // If no user selection, progress is stopped
-    if (isNaN(selections[questionCounter])) {
-      alert('Please make a selection!');
+    
+    // User has to make a selection, can't skip
+     if (isNaN(selections[questionCounter])) {
+      alert('Pick an answer');
     } else {
       questionCounter++;
       displayNext();
     }
   });
-
+  
   // Click handler for the 'prev' button
   $('#prev').on('click', function (e) {
     e.preventDefault();
-
-    if (quiz.is(':animated')) {
+    
+    if(quiz.is(':animated')) {
       return false;
     }
     choose();
     questionCounter--;
     displayNext();
   });
-
+  
   // Click handler for the 'Start Over' button
   $('#start').on('click', function (e) {
     e.preventDefault();
-
-    if (quiz.is(':animated')) {
+    
+    if(quiz.is(':animated')) {
       return false;
     }
     questionCounter = 0;
@@ -71,34 +75,34 @@
     displayNext();
     $('#start').hide();
   });
-
-  // Animates buttons on hover
+  
+  // Activate and animates buttons when user hovers on it 
   $('.button').on('mouseenter', function () {
     $(this).addClass('active');
   });
   $('.button').on('mouseleave', function () {
     $(this).removeClass('active');
   });
-
+  
   // Creates and returns the div that contains the questions and 
   // the answer selections
   function createQuestionElement(index) {
     var qElement = $('<div>', {
       id: 'question'
     });
-
+    
     var header = $('<h2>Question ' + (index + 1) + ':</h2>');
     qElement.append(header);
-
+    
     var question = $('<p>').append(questions[index].question);
     qElement.append(question);
-
+    
     var radioButtons = createRadios(index);
     qElement.append(radioButtons);
-
+    
     return qElement;
   }
-
+  
   // Creates a list of the answer choices as radio inputs
   function createRadios(index) {
     var radioList = $('<ul>');
@@ -113,33 +117,33 @@
     }
     return radioList;
   }
-
+  
   // Reads the user selection and pushes the value to an array
   function choose() {
     selections[questionCounter] = +$('input[name="answer"]:checked').val();
   }
-
+  
   // Displays next requested element
   function displayNext() {
-    quiz.fadeOut(function () {
+    quiz.fadeOut(function() {
       $('#question').remove();
-
-      if (questionCounter < questions.length) {
+      
+      if(questionCounter < questions.length){
         var nextQuestion = createQuestionElement(questionCounter);
         quiz.append(nextQuestion).fadeIn();
         if (!(isNaN(selections[questionCounter]))) {
-          $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+          $('input[value='+selections[questionCounter]+']').prop('checked', true);
         }
-
+        
         // Controls display of 'prev' button
-        if (questionCounter === 1) {
+        if(questionCounter === 1){
           $('#prev').show();
-        } else if (questionCounter === 0) {
-
+        } else if(questionCounter === 0){
+          
           $('#prev').hide();
           $('#next').show();
         }
-      } else {
+      }else {
         var scoreElem = displayScore();
         quiz.append(scoreElem).fadeIn();
         $('#next').hide();
@@ -148,20 +152,20 @@
       }
     });
   }
-
+  
   // Computes score and returns a paragraph element to be displayed
   function displayScore() {
-    var score = $('<p>', { id: 'question' });
-
+    var score = $('<p>',{id: 'question'});
+    
     var numCorrect = 0;
     for (var i = 0; i < selections.length; i++) {
       if (selections[i] === questions[i].correctAnswer) {
         numCorrect++;
       }
     }
-
-    score.append('You got ' + numCorrect + ' questions out of ' +
-      questions.length + ' right!!!');
+    
+    score.append(numCorrect + ' questions out of ' +
+                 questions.length + ' correct!');
     return score;
   }
 })();
