@@ -55,9 +55,8 @@ var doquery_object = function (conn, cb) {
 //
 // res = HTTP result object sent back to the client
 // name = Name to query for
-function query_db(res, login) {
+function query_db(res) {
 	global_res = res;
-	global_login = login;
 	async.waterfall(
 		[
 			doconnect,
@@ -216,6 +215,5 @@ function display_quiz(res, results) {
 }
 
 exports.load_quiz = function(req, res){
-    // Do other stuff
-    display_quiz(res, results);
+    query_db(res);
 };
