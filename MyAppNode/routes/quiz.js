@@ -153,12 +153,11 @@ var doquery5 = function (results, conn, cb) {
 	});}*/
 
 function display_quiz(res, results) {
-	res.render('quiz.jade',
-		   { results: JSON.stringify(results) }
-	  );
+	res.render('quiz.jade', 
+		{ results: JSON.stringify(results) });
 }
 
 exports.load_quiz = function(req, res){
     //query_db(res);
-		display_quiz(res, results);
+	display_quiz(res, results);
 };
