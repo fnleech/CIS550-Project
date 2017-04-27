@@ -7,7 +7,6 @@
 var async = require('async');
 var oracledb = require('oracledb');
 var global_res;
-var global_login;
 
 // Properties are applicable to all connections and SQL executions.
 // They can also be set or overridden at the individual execute() call level
@@ -16,13 +15,12 @@ var global_login;
 // oracledb.outFormat = oracledb.OBJECT;
 
 var doconnect = function (cb) {
-	console.log(cb);
+	oracledb.outFormat = oracledb.OBJECT;
 	oracledb.getConnection(
 		{
 			user: "cis550project",
 			password: "cis550projectkeyPENN",
 			connectString: "cis550project.cgajnbzkqq1i.us-west-2.rds.amazonaws.com:1521/PENNDB",
-			outFormat: oracledb.OBJECT
 		},
 		cb);
 };
@@ -59,7 +57,9 @@ function query_db(res) {
 	async.waterfall(
 		[
 			doconnect,
-			doquery1
+			doquery1,
+			doquery2,
+
 		],
 		function (err, conn) {
 			if (err) { console.error("In waterfall error cb: ==>", err, "<=="); }
@@ -80,38 +80,40 @@ var doquery1 = function (conn, cb) {
 	"SELECT CID, MedalCount, Year FROM ath_medals " +
 	"Where MedalCount = (SELECT MAX(AM1.MedalCount) " +
 	"from ath_medals AM1 where AM1.year = 2012)", 
-	function(err, result){
+	function(err, rows){
   	if(err) {
     	throw err;
   	} else {
-    	console.log(result.rows);
+    	console.log(rows.rows);
+			var results = { query1: rows.rows };
+			return cb(null, results, conn);
+  	}
+	});}
+
+var doquery2 = function (results, conn, cb) {
+	conn.execute("WITH ath_medals AS(" +
+	"SELECT A.Height, R.Discipline, count(*) as MedalCount " +
+	"FROM result R INNER JOIN athlete A ON A.AID = R.AID " +
+	"INNER JOIN afromC AFC ON A.AID = AFC.AID " +
+	"INNER JOIN Participates P ON P.CID = AFC.CID " +
+	"Where A.Gender = 'Male'AND R.Discipline = 'Swimming' " +
+	"AND R.Medal = 'Gold' AND A.Height != -1 " +
+	"GROUP BY  R.Discipline, A.Height ) " +
+	"Select AM.Height From ath_medals AM " +
+	"Where AM.MedalCount = (SELECT MAX(AM2.MedalCount) " +
+	"from ath_medals AM2)", 
+	function(err, rows){
+  	if(err) {
+    	throw err;
+  	} else {
+    	console.log(rows.rows);
+			results.query2 = rows.rows;
+			display_quiz(global_res, results);
 			return cb(null, conn);
   	}
 	});}
 
-/*var ans2 = {connection.query("WITH ath_medals AS(
-SELECT A.Height, R.Discipline, count(*) as MedalCount
-FROM result R
-	INNER JOIN athlete A
-		ON A.AID = R.AID
-	INNER JOIN afromC AFC
-		ON A.AID = AFC.AID
-	INNER JOIN Participates P
-		ON P.CID = AFC.CID
-Where A.Gender = 'Male'AND R.Discipline = 'Swimming' AND R.Medal = 'Gold' AND A.Height != -1
-GROUP BY  R.Discipline, A.Height
-)
-Select AM.Height
-From ath_medals AM
-Where AM.MedalCount = (SELECT MAX(AM2.MedalCount)
-	from ath_medals AM2)", function(err, rows){
-  if(err) {
-    throw err;
-  } else {
-    setValue(rows);
-  }
-	});}
-
+/*
 var ans3 = {connection.query("WITH ath_count AS(
 SELECT P.Year, count(*) as NumAthletes
 FROM Participates P
