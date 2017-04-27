@@ -3,6 +3,16 @@ append styles
     link(type='text/css', rel='stylesheet', href='/stylesheets/stylesheet.css')
 block body
     header
+
+    a(href='https://twitter.com/olympics')
+        img(src='/logo-twitter.png' width="24" height="20" alt="Image size dimensions")
+    a(href='https://www.facebook.com/olympics')
+        img(src='/logo-fb.png' width="20" height="20" alt="Image size dimensions")
+    a(href='https://www.youtube.com/user/olympic')
+        img(src='/logo-youtube.png' width="28" height="20" alt="Image size dimensions")
+    a(href='https://plus.google.com/+Olympics')
+        img(src='/logo-google.png' width="20" height="20" alt="Image size dimensions")
+        
     // Static navbar
     +navbar-static("HW2 - CIS550","navbar")
         block navbarcontent
