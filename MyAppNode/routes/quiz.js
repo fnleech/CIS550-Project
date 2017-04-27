@@ -54,13 +54,12 @@ var doquery_object = function (conn, cb) {
 // Query the oracle database, and call output_actors on the results
 //
 // res = HTTP result object sent back to the client
-// name = Name to query for
 function query_db(res) {
 	global_res = res;
 	async.waterfall(
 		[
 			doconnect,
-			doquery_object
+			doquery1
 		],
 		function (err, conn) {
 			if (err) { console.error("In waterfall error cb: ==>", err, "<=="); }
@@ -71,31 +70,26 @@ function query_db(res) {
 
 
 // Answers
-/*var ans1 = {connection.query("WITH ath_medals AS(
-SELECT AFC.CID, P.Year, R.Medal, count(*) as MedalCount
-FROM result R
-	INNER JOIN athlete A
-		ON A.AID = R.AID
-	INNER JOIN afromC AFC
-		ON A.AID = AFC.AID
-	INNER JOIN Participates P
-		ON P.CID = AFC.CID
-Where P.year = 2012 
-GROUP BY AFC.CID, R.Medal,P.Year
-)
-SELECT CID, MedalCount, Year
-FROM ath_medals
-Where MedalCount = (SELECT MAX(AM1.MedalCount)
-	from ath_medals AM1
-	where AM1.year = 2012)", function(err, rows){
-  if(err) {
-    throw err;
-  } else {
-    setValue(rows);
-  }
+var doquery1 = function (conn, cb) {
+	connection.execute("WITH ath_medals AS(" + 
+	"SELECT AFC.CID, P.Year, R.Medal, count(*) as MedalCount " +
+	"FROM result R INNER JOIN athlete A ON A.AID = R.AID " +
+	"INNER JOIN afromC AFC ON A.AID = AFC.AID " +
+	"INNER JOIN Participates P ON P.CID = AFC.CID " + 
+	"Where P.year = 2012 GROUP BY AFC.CID, R.Medal,P.Year) " +
+	"SELECT CID, MedalCount, Year FROM ath_medals " +
+	"Where MedalCount = (SELECT MAX(AM1.MedalCount) " +
+	"from ath_medals AM1 where AM1.year = 2012)", 
+	function(err, result){
+  	if(err) {
+    	throw err;
+  	} else {
+    	console.log(result.rows);
+			return cb(null, conn);
+  	}
 	});}
 
-var ans2 = {connection.query("WITH ath_medals AS(
+/*var ans2 = {connection.query("WITH ath_medals AS(
 SELECT A.Height, R.Discipline, count(*) as MedalCount
 FROM result R
 	INNER JOIN athlete A
