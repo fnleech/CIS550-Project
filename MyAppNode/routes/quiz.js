@@ -5,7 +5,7 @@
 // req is an object containing information about the HTTP request that raised the event. In response to req, you use res to send back the desired HTTP response
 
 // Answers
-var ans1 = {connection.query("WITH ath_medals AS(
+/*var ans1 = {connection.query("WITH ath_medals AS(
 SELECT AFC.CID, P.Year, R.Medal, count(*) as MedalCount
 FROM result R
 	INNER JOIN athlete A
@@ -131,24 +131,24 @@ From Country C1 Where C1.Population != -1);", function(err, rows){
   } else {
     setValue(rows);
   }
-	});}
+	});}*/
 
 // Put answers into Answer array 
 var results = [
-	ans1, 
-	ans2,
-	ans3,
-	ans4,
-	ans5
+	2,
+	5,
+	2,
+	2,
+	2
 ];
 
 function display_quiz(res, results) {
 	res.render('quiz.jade',
-		   { results: results }
+		   { results: JSON.stringify(results) }
 	  );
 }
 
 exports.load_quiz = function(req, res){
     // Do other stuff
-    display_quiz(res, null)
+    display_quiz(res, results);
 };

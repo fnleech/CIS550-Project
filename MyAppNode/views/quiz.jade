@@ -7,6 +7,8 @@ block navbarcontent
     +nav_item("/") Your Work
     +nav_item("/quiz", "active") Quiz
 block content
+    script(type='text/javascript').
+        var local_results = !{results};
     #container
       #title
         h1 Summer Olympics Quiz
