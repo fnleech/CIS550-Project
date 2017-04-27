@@ -1,9 +1,12 @@
 extends ../node_modules/jade-bootstrap/layouts/carousel
 append styles
+<<<<<<< Updated upstream
     link(type='text/css', rel='carousel', href='/stylesheets/carousel.css')
+=======
+    // Custom styles for this template 
+    link(href="../css/carousel.css", rel="stylesheet")
+>>>>>>> Stashed changes
 block body
-    header
-
     a(href='https://twitter.com/olympics')
         img(src='/logo-twitter.png' width="24" height="20" alt="Image size dimensions")
     a(href='https://www.facebook.com/olympics')
@@ -12,6 +15,7 @@ block body
         img(src='/logo-youtube.png' width="28" height="20" alt="Image size dimensions")
     a(href='https://plus.google.com/+Olympics')
         img(src='/logo-google.png' width="20" height="20" alt="Image size dimensions")
+<<<<<<< Updated upstream
     
 
     // NAVBAR   
@@ -26,18 +30,49 @@ block body
                         span.icon-bar
                         span.iocon-bar
                     a.navbar-brand(href='#') Summer Olympics
+=======
+    .navbar-wrapper 
+        .navbar.navbar-inverse.navbar-static-top(role='navigation')
+            .container
+>>>>>>> Stashed changes
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li.active
                             a(href='#') Home
+<<<<<<< Updated upstream
                         li
                             a(href='#about') About
                         li
                             a(href='#contact') Contact 
+=======
+                        li.dropdown
+                                a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                    | Olympics
+                                    span.caret
+                                ul.dropdown-menu(role='menu')
+                                    li
+                                        a(href='#') Summer Olympics
+                                    li
+                                        a(href='#') Country
+                                    li
+                                        a(href='#') Sport
+                                    li
+                                        a(href='#') Athlete    
+                                    li.divider    
+                        li
+                            a(href='#about') Quiz
+                        li
+                            a(href='#about') Quiz Results    
+                        li
+                            a(href='#about') Gold Medals Map
+                        li
+                            a(href='#about') References          
+>>>>>>> Stashed changes
 
 
     // CAROUSEL LAYOUT WE WANT
     #myCarousel.carousel.slide(data-ride='carousel')
+<<<<<<< Updated upstream
 
         ol.carousel-indicators
             li.active(data-target='#myCarousel', data-slide-to='0')
@@ -48,11 +83,28 @@ block body
                 .container
                     .carousel-caption
                     h1 London Olympics 2012
+=======
+        ol.carousel-indicators
+            li.active(data-target='#myCarousel', data-slide-to='0')
+            li(data-target='#myCarousel', data-slide-to='1')
+            li(data-target='#myCarousel', data-slide-to='2')
+            li(data-target='#myCarousel', data-slide-to='3')
+        .carousel-inner
+            .item.active
+                img(src='http://www.jblpro.com/press/august08/JBL_OpeningCeremony.JPG'  height="100" width="1500" align='center')
+            .item
+                img(src='https://upload.wikimedia.org/wikipedia/commons/8/8e/2000_Summer_Olympics_opening_ceremony_1.JPEG'  height="300" width="1500" align='center')
+            .item
+                img(src='http://darkroom.baltimoresun.com/wp-content/uploads/2012/07/AFP_Getty-149374426.jpg'  height="300" width="1500" align='center')                     
+>>>>>>> Stashed changes
         a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
             span.glyphicon.glyphicon-chevron-left
         a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
             span.glyphicon.glyphicon-chevron-right                    
+<<<<<<< Updated upstream
         
+=======
+>>>>>>> Stashed changes
 
     // Features
     hr.featureette-divider
@@ -76,6 +128,7 @@ block body
             p.lead
                 | Small summary about the summer olympics or out website
     .row           
+<<<<<<< Updated upstream
         // Main component for a primary marketing message or call to action
         //.jumbotron
           //  .main-content
@@ -83,6 +136,8 @@ block body
             //.sidebar
               //  block sidebar
 
+=======
+>>>>>>> Stashed changes
     footer.footer
         .container
             p.text-muted Running on node with Express, Jade, Bootstrap
