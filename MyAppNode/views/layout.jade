@@ -1,6 +1,6 @@
-extends ../node_modules/jade-bootstrap/_bootstrap
+extends ../node_modules/jade-bootstrap/layouts/carousel
 append styles
-    link(type='text/css', rel='stylesheet', href='/stylesheets/stylesheet.css')
+    link(type='text/css', rel='carousel', href='/stylesheets/carousel.css')
 block body
     header
 
@@ -12,19 +12,77 @@ block body
         img(src='/logo-youtube.png' width="28" height="20" alt="Image size dimensions")
     a(href='https://plus.google.com/+Olympics')
         img(src='/logo-google.png' width="20" height="20" alt="Image size dimensions")
-        
+    
+
+    // NAVBAR   
     // Static navbar
-    +navbar-static("HW2 - CIS550","navbar")
-        block navbarcontent
-    .container
+    .navbar-wrapper 
+        .navbar.navbar-inverse.navbar-static-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.iocon-bar
+                    a.navbar-brand(href='#') Summer Olympics
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li.active
+                            a(href='#') Home
+                        li
+                            a(href='#about') About
+                        li
+                            a(href='#contact') Contact 
+
+
+    // CAROUSEL LAYOUT WE WANT
+    #myCarousel.carousel.slide(data-ride='carousel')
+
+        ol.carousel-indicators
+            li.active(data-target='#myCarousel', data-slide-to='0')
+            li(data-target='#myCarousel', data-slide-to='1')
+        .carousel-inner
+            item.active
+                img(src='http://toonaripost.com/wp-content/uploads/london-olympics-2012-24a.jpg'  height="500" width="1000" align='center')
+                .container
+                    .carousel-caption
+                    h1 London Olympics 2012
+        a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left
+        a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right                    
+        
+
+    // Features
+    hr.featureette-divider
+    .row.feaaturette
+        .col-md-6
+            h2.featurette-heading
+                | The Summer Olympics. 
+                span.text-muted Something else to say.       
+            p.lead
+                | Small summary about the summer olympics or out website
+        .col-md-5
+            img.featurette-image.img-responsive(src='https://www.l-tron.com/wp-content/uploads/2016/06/rio-de-janeiro-2016-summer-olympics.png' height='500' width='500')            
+    hr.featurette-divider
+    .row.feaaturette
+        .col-md-5
+            img.featurette-image.img-responsive(src='https://www.l-tron.com/wp-content/uploads/2016/06/rio-de-janeiro-2016-summer-olympics.png' height='500' width='500')  
+        .col-md-6
+            h2.featurette-heading
+                | The Summer Olympics. 
+                span.text-muted Something else to say.       
+            p.lead
+                | Small summary about the summer olympics or out website
+    .row           
         // Main component for a primary marketing message or call to action
-        .jumbotron
-            .main-content
-                block content
-            .sidebar
-                block sidebar
-    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-    script(type='text/javascript', src='js/quiz.js')
+        //.jumbotron
+          //  .main-content
+            //    block content
+            //.sidebar
+              //  block sidebar
+
     footer.footer
         .container
             p.text-muted Running on node with Express, Jade, Bootstrap

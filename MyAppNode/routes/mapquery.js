@@ -15,14 +15,6 @@ Order by C.CID", function(err, rows){
 
 //query for the results
 
-var mapresults = [
-	2,
-	5,
-	2,
-	2,
-	2
-];
-
 // pass the results from  here to map.jade
 function display_mapresults(res, mapresults) {
 	res.render('map.jade',
