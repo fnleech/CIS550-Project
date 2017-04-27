@@ -126,6 +126,7 @@ header {
   width: 500px;
   margin: 50px auto;
   overflow: hidden;
+  background-color: #FFFFFF;
 }
 .main-content {
   float: left;

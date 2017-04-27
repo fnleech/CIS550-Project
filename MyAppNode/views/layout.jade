@@ -1,19 +1,17 @@
 extends ../node_modules/jade-bootstrap/layouts/carousel
 append styles
-    link(type='text/css', rel='carousel', href='/stylesheets/carousel.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/carousel.css')
     // Custom styles for this template 
-    link(href="../css/carousel.css", rel="stylesheet")
 block body
+    header 
     a(href='https://twitter.com/olympics')
         img(src='/logo-twitter.png' width="24" height="20" alt="Image size dimensions")
     a(href='https://www.facebook.com/olympics')
         img(src='/logo-fb.png' width="20" height="20" alt="Image size dimensions")
     a(href='https://www.youtube.com/user/olympic')
-        img(src='/logo-youtube.png' width="28" height="20" alt="Image size dimensions")
+        img(src='/logo-youtube.png' width="25" height="20" alt="Image size dimensions")
     a(href='https://plus.google.com/+Olympics')
         img(src='/logo-google.png' width="20" height="20" alt="Image size dimensions")
-    
-
     // NAVBAR   
     // Static navbar
     .navbar-wrapper 
@@ -46,73 +44,18 @@ block body
                                         a(href='#') Sport
                                     li
                                         a(href='#') Athlete    
-                                    li.divider    
+                                    //li.divider    
                         li
-                            a(href='#about') Quiz
+                            a(href='/quiz') Quiz
                         li
                             a(href='#about') Quiz Results    
                         li
-                            a(href='#about') Gold Medals Map
+                            a(href='/map') Gold Medals Map
                         li
-                            a(href='#about') Reference          
-
-
-    // CAROUSEL LAYOUT WE WANT
-    #myCarousel.carousel.slide(data-ride='carousel')
-
-
-        ol.carousel-indicators
-            li.active(data-target='#myCarousel', data-slide-to='0')
-            li(data-target='#myCarousel', data-slide-to='1')
-        .carousel-inner
-            item.active
-                img(src='http://toonaripost.com/wp-content/uploads/london-olympics-2012-24a.jpg'  height="500" width="1000" align='center')
-                .container
-                    .carousel-caption
-                    h1 London Olympics 2012
-
-        ol.carousel-indicators
-            li.active(data-target='#myCarousel', data-slide-to='0')
-            li(data-target='#myCarousel', data-slide-to='1')
-            li(data-target='#myCarousel', data-slide-to='2')
-            li(data-target='#myCarousel', data-slide-to='3')
-        .carousel-inner
-            .item.active
-                img(src='http://www.jblpro.com/press/august08/JBL_OpeningCeremony.JPG'  height="100" width="1500" align='center')
-            .item
-                img(src='https://upload.wikimedia.org/wikipedia/commons/8/8e/2000_Summer_Olympics_opening_ceremony_1.JPEG'  height="300" width="1500" align='center')
-            .item
-                img(src='http://darkroom.baltimoresun.com/wp-content/uploads/2012/07/AFP_Getty-149374426.jpg'  height="300" width="1500" align='center')                     
-
-        a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
-            span.glyphicon.glyphicon-chevron-left
-        a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
-            span.glyphicon.glyphicon-chevron-right                    
-        
-
-    // Features
-    hr.featureette-divider
-    .row.feaaturette
-        .col-md-6
-            h2.featurette-heading
-                | The Summer Olympics. 
-                span.text-muted Something else to say.       
-            p.lead
-                | Small summary about the summer olympics or out website
-        .col-md-5
-            img.featurette-image.img-responsive(src='https://www.l-tron.com/wp-content/uploads/2016/06/rio-de-janeiro-2016-summer-olympics.png' height='500' width='500')            
-    hr.featurette-divider
-    .row.feaaturette
-        .col-md-5
-            img.featurette-image.img-responsive(src='https://www.l-tron.com/wp-content/uploads/2016/06/rio-de-janeiro-2016-summer-olympics.png' height='500' width='500')  
-        .col-md-6
-            h2.featurette-heading
-                | The Summer Olympics. 
-                span.text-muted Something else to say.       
-            p.lead
-                | Small summary about the summer olympics or out website
-    .row           
-
+                            a(href='/reference') Reference          
+    .jumbotron
+            .main-content
+                block content
     footer.footer
         .container
             p.text-muted Running on node with Express, Jade, Bootstrap

@@ -4,7 +4,15 @@
 
 body {
   padding-bottom: 40px;
-  color: #5a5a5a;
+  color: #464646;
+}
+
+.container {
+  background-color: #FFFFFF;
+}
+
+.jumbotron {
+  background-color: #FFFFFF;
 }
 
 
@@ -24,6 +32,7 @@ body {
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
+  background: #464646;
 }
 .navbar-wrapper .navbar {
   padding-right: 15px;
@@ -31,6 +40,7 @@ body {
 }
 .navbar-wrapper .navbar .container {
   width: auto;
+  background: #464646;
 }
 
 
@@ -104,6 +114,7 @@ body {
   .navbar-wrapper .container {
     padding-right: 15px;
     padding-left: 15px;
+    background: #464646;
   }
   .navbar-wrapper .navbar {
     padding-right: 0;
