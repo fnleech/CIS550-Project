@@ -1,32 +1,48 @@
 // Inherits from layout 
-extend layout
+extends layout
 // Then we produce a form that triggers /person once
 // the user hits Submit
 block navbarcontent
-    +nav_item("/","active") Home
-    +nav_item("/") Your Work
-    +nav_item("/quiz") Quiz
 
-
-    p Welcome!
-    +navbar("Menu", "dropdown_menu", "inverse")
-      +nav_item("/", "active") Home
-      +nav_item_dropdown("#")(label="Info on Olympics")
-        +nav_item("#") Olympics
-        +nav_item("#") Country
-        +nav_item("#") Sporting Events
-        +nav_item("#") Athletes
-        //+nav_divider
-        //+nav_header Nav header
-        //+nav_item("#") Separated link
-      +nav_item("/quiz") Quiz
-      +nav_item("/") About
-      +nav_item("/reference") Reference
-      
 block content
   p
-    +icon-primary("search")
-    |  #{title}:
-    form(method='get', action='/')
-      input(name='name', value='')
-      input(type='submit', value='Submit')
+  #myCarousel.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+          li.active(data-target='#myCarousel', data-slide-to='0')
+          li(data-target='#myCarousel', data-slide-to='1')
+          li(data-target='#myCarousel', data-slide-to='2')
+          li(data-target='#myCarousel', data-slide-to='3')
+      .carousel-inner
+          .item.active
+              img(src='http://www.jblpro.com/press/august08/JBL_OpeningCeremony.JPG'  height="100" width="1500" align='center')
+          .item
+              img(src='https://upload.wikimedia.org/wikipedia/commons/8/8e/2000_Summer_Olympics_opening_ceremony_1.JPEG'  height="300" width="1500" align='center')
+          .item
+              img(src='http://darkroom.baltimoresun.com/wp-content/uploads/2012/07/AFP_Getty-149374426.jpg'  height="300" width="1500" align='center')                     
+
+      a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+          span.glyphicon.glyphicon-chevron-left
+      a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+          span.glyphicon.glyphicon-chevron-right                         
+  // Features
+  hr.featureette-divider
+  .row.feaaturette
+      .col-md-6
+          h2.featurette-heading
+              | The Summer Olympics. 
+              span.text-muted Something else to say.       
+          p.lead
+              | Small summary about the summer olympics or out website
+      .col-md-5
+          img.featurette-image.img-responsive(src='https://www.l-tron.com/wp-content/uploads/2016/06/rio-de-janeiro-2016-summer-olympics.png' height='500' width='500')            
+  hr.featurette-divider
+  .row.feaaturette
+      .col-md-5
+          img.featurette-image.img-responsive(src='https://www.l-tron.com/wp-content/uploads/2016/06/rio-de-janeiro-2016-summer-olympics.png' height='500' width='500')  
+      .col-md-6
+          h2.featurette-heading
+              | The Summer Olympics. 
+              span.text-muted Something else to say.       
+          p.lead
+              | Small summary about the summer olympics or out website
+  .row    
