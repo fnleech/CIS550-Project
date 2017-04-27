@@ -1,5 +1,6 @@
 // This is the intermediate page for quiz queries
 
+/*
 
 // Query the oracle database, and call output_actors on the results 
 // req is an object containing information about the HTTP request that raised the event. In response to req, you use res to send back the desired HTTP response
@@ -32,22 +33,6 @@ var dorelease = function(conn) {
   });
 };
 
-
-var doquery_object = function (conn, cb) {
-  conn.execute(
-    "SELECT * FROM ATHLETE WHERE rownum <= 10",
-    function(err, result)
-    {
-      if (err) {
-        return cb(err, conn);
-      } else {
-				console.log(result.rows);
-        display_quiz(global_res, result.rows);
-        return cb(null, conn);
-      }
-    });
-};
-
 /////
 // Query the oracle database, and call output_actors on the results
 //
@@ -59,7 +44,9 @@ function query_db(res) {
 			doconnect,
 			doquery1,
 			doquery2,
-
+			doquery3,
+			doquery4,
+			doquery5
 		],
 		function (err, conn) {
 			if (err) { console.error("In waterfall error cb: ==>", err, "<=="); }
@@ -106,14 +93,12 @@ var doquery2 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-    	console.log(rows.rows);
 			results.query2 = rows.rows;
-			display_quiz(global_res, results);
 			return cb(null, conn);
   	}
 	});}
 
-/*
+
 var ans3 = {connection.query("WITH ath_count AS(
 SELECT P.Year, count(*) as NumAthletes
 FROM Participates P
@@ -211,5 +196,6 @@ function display_quiz(res, results) {
 }
 
 exports.load_quiz = function(req, res){
-    query_db(res);
+    //query_db(res);
+		display_quiz(res, results);
 };
