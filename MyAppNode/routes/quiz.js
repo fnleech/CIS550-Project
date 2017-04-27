@@ -71,8 +71,7 @@ var doquery1 = function (conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-    	console.log(rows.rows);
-			var results = { query1: rows.rows };
+			var results = { query1: rows.rows[0] };
 			return cb(null, results, conn);
   	}
 	});}
@@ -93,7 +92,7 @@ var doquery2 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.query2 = rows.rows;
+			results.query2 = rows.rows[0];
 			return cb(null, results, conn);
   	}
 	});}
@@ -112,7 +111,7 @@ var doquery3 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.query3 = rows.rows;
+			results.query3 = rows.rows[0];
 			return cb(null, results, conn);
   	}
 	});}
@@ -130,7 +129,7 @@ var doquery4 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.query4 = rows.rows;
+			results.query4 = rows.rows[0];
 			return cb(null, results, conn);
   	}
 	});}
@@ -141,12 +140,12 @@ var doquery5 = function (results, conn, cb) {
 	"INNER JOIN afromC AFC ON A.AID = AFC.AID INNER JOIN Participates P ON P.CID = AFC.CID " +
 	"GROUP BY AFC.CID, R.Medal ) Select ATM.MedalCount, C.Name, C.Population " +
 	"From athmedals ATM Inner Join Country C ON C.CID = ATM.CID " +
-	"Where C.Population = (SELECT MIN(C1.Population) From Country C1 Where C1.Population != -1);", 
+	"Where C.Population = (SELECT MIN(C1.Population) From Country C1 Where C1.Population != -1)", 
 	function(err, rows){
   	if(err) {
     	throw err;
   	} else {
-			results.query5 = rows.rows;
+			results.query5 = rows.rows[0];
 			console.log(results);
 			return cb(null, conn);
   	}
