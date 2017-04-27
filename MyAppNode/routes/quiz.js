@@ -4,12 +4,6 @@
 // Query the oracle database, and call output_actors on the results 
 // req is an object containing information about the HTTP request that raised the event. In response to req, you use res to send back the desired HTTP response
 
-function display_quiz(res, selections) {
-	res.render('quiz.jade',
-		   { results: results }
-	  );
-}
-
 // Answers
 var ans1 = {connection.query("WITH ath_medals AS(
 SELECT AFC.CID, P.Year, R.Medal, count(*) as MedalCount
@@ -140,7 +134,7 @@ From Country C1 Where C1.Population != -1);", function(err, rows){
 	});}
 
 // Put answers into Answer array 
-var Answer = [
+var results = [
 	ans1, 
 	ans2,
 	ans3,
@@ -148,12 +142,11 @@ var Answer = [
 	ans5
 ];
 
-for (var i = 0; i < selections.length; i++) {
-      if (selections[i] === Answer[i]) {
-        numCorrect++;
-      }
+function display_quiz(res, results) {
+	res.render('quiz.jade',
+		   { results: results }
+	  );
 }
-
 
 exports.load_quiz = function(req, res){
     // Do other stuff

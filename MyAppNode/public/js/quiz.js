@@ -2,23 +2,18 @@
   var questions = [{
     question: "Which country has the most number of gold medals in the 2012 Summer Olympics??",
     choices: [2, 5, 10, 15, 20],
-    correctAnswer: 2
   }, {
     question: "What's the best height to win a gold medal in swimming if you're a guy?",
     choices: [3, 6, 9, 12, 18],
-    correctAnswer: 4
   }, {
     question: "Which Summer Olympics was most expensive per athlete",
     choices: [72, 99, 108, 134, 156],
-    correctAnswer: 0
   }, {
     question: "From 1960-2012, how many Summer Olympics did the USA take home the most number of gold medals?",
     choices: [4, 5, 6, 7, 8],
-    correctAnswer: 3
   }, {
     question: "How many gold medals has the smallest IOC Country (by population) won? What is the country?",
     choices: [20, 30, 40, 50, 64],
-    correctAnswer: 4
   }];
   
   //keep track of the question number
@@ -158,7 +153,7 @@
     
     var numCorrect = 0;
     for (var i = 0; i < selections.length; i++) {
-      if (selections[i] === questions[i].correctAnswer) {
+      if (selections[i] === results[i]) {
         numCorrect++;
       }
     }
