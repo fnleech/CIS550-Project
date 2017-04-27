@@ -71,7 +71,7 @@ function query_db(res) {
 
 // Answers
 var doquery1 = function (conn, cb) {
-	connection.execute("WITH ath_medals AS(" + 
+	conn.execute("WITH ath_medals AS(" + 
 	"SELECT AFC.CID, P.Year, R.Medal, count(*) as MedalCount " +
 	"FROM result R INNER JOIN athlete A ON A.AID = R.AID " +
 	"INNER JOIN afromC AFC ON A.AID = AFC.AID " +
