@@ -4,6 +4,73 @@
 // Query the oracle database, and call output_actors on the results 
 // req is an object containing information about the HTTP request that raised the event. In response to req, you use res to send back the desired HTTP response
 
+var async = require('async');
+var oracledb = require('oracledb');
+var global_res;
+var global_login;
+
+// Properties are applicable to all connections and SQL executions.
+// They can also be set or overridden at the individual execute() call level
+//
+// This script sets outFormat in the execute() call but it could be set here instead:
+// oracledb.outFormat = oracledb.OBJECT;
+
+var doconnect = function (cb) {
+	console.log(cb);
+	oracledb.getConnection(
+		{
+			user: "cis550project",
+			password: "cis550projectkeyPENN",
+			connectString: "cis550project.cgajnbzkqq1i.us-west-2.rds.amazonaws.com:1521/PENNDB",
+			outFormat: oracledb.OBJECT
+		},
+		cb);
+};
+
+var dorelease = function(conn) {
+  conn.close(function (err) {
+    if (err)
+      console.error(err.message);
+  });
+};
+
+
+var doquery_object = function (conn, cb) {
+  conn.execute(
+    "SELECT * FROM ATHLETE WHERE rownum <= 10",
+    function(err, result)
+    {
+      if (err) {
+        return cb(err, conn);
+      } else {
+				console.log(result.rows);
+        display_quiz(global_res, result.rows);
+        return cb(null, conn);
+      }
+    });
+};
+
+/////
+// Query the oracle database, and call output_actors on the results
+//
+// res = HTTP result object sent back to the client
+// name = Name to query for
+function query_db(res, login) {
+	global_res = res;
+	global_login = login;
+	async.waterfall(
+		[
+			doconnect,
+			doquery_object
+		],
+		function (err, conn) {
+			if (err) { console.error("In waterfall error cb: ==>", err, "<=="); }
+			if (conn)
+				dorelease(conn);
+		});
+}
+
+
 // Answers
 /*var ans1 = {connection.query("WITH ath_medals AS(
 SELECT AFC.CID, P.Year, R.Medal, count(*) as MedalCount

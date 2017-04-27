@@ -7,10 +7,13 @@
   },
   "dependencies": {
     "async": "^2.3.0",
+    "d3": "^4.8.0",
+    "datamaps": "^0.5.8",
     "express": "3.2.6",
     "jade": "*",
     "jade-bootstrap": "*",
     "nib": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "topojson": "^3.0.0"
   }
 }
