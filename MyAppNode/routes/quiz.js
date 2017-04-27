@@ -71,7 +71,8 @@ var doquery1 = function (conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			var results = { query1: rows.rows[0] };
+			var results = [];
+			results.push(rows.rows[0].MEDALCOUNT);
 			return cb(null, results, conn);
   	}
 	});}
@@ -92,7 +93,7 @@ var doquery2 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.query2 = rows.rows[0];
+			results.push(rows.rows[0].Height);
 			return cb(null, results, conn);
   	}
 	});}
@@ -111,7 +112,7 @@ var doquery3 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.query3 = rows.rows[0];
+			results.push(rows.rows[0].name);
 			return cb(null, results, conn);
   	}
 	});}
@@ -129,7 +130,7 @@ var doquery4 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.query4 = rows.rows[0];
+			results.push(rows.rows[0].USAwins);
 			return cb(null, results, conn);
   	}
 	});}
@@ -145,20 +146,11 @@ var doquery5 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.query5 = rows.rows[0];
+			results.push(rows.rows[0].name);
 			console.log(results);
 			return cb(null, conn);
   	}
 	});}*/
-
-// Put answers into Answer array 
-var results = [
-	2,
-	5,
-	2,
-	2,
-	2
-];
 
 function display_quiz(res, results) {
 	res.render('quiz.jade',
