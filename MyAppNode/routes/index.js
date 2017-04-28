@@ -20,6 +20,10 @@ exports.do_ref = function(req, res){
 exports.do_olym = function(req, res){
   res.render('olympics.jade', {});
 };
+
+exports.do_map = function(req, res){
+  res.render('map.jade', {});
+};
 //exports.do_quiz = function(req, res){
   //res.render('quiz.jade', {});
 //};

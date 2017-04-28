@@ -1,17 +1,15 @@
 // Inherits from layout 
 extend layout
-// Then we produce a form that triggers /person once
+// Then we produce a form that triggers /actor once
 // the user hits Submit
 block navbarcontent
-    +nav_item("/","active") Sample Work
-    +nav_item("/") Your Work
-    +nav_item("/reference") Reference
+
 block content
   body
     script(src='http://d3js.org/d3.v3.min.js')
     script(src='http://d3js.org/topojson.v1.min.js')
     // I recommend you host this file on your own, since this will change without warning
-    script(src='map.js')
+    script(src='/js/map.js')
     h2 Summer Olympics Gold Map
     p
       a(href='http://datamaps.github.io/') DataMaps Project Homepage
