@@ -1,0 +1,24 @@
+// Jade file to specify output of a athlete list
+// Inherits from layout
+extends layout
+block navbarcontent
+
+block content
+  p
+    table
+      - for (var inx = 0; inx < results.length; inx++)
+        tr
+          td=results[inx].AID+" "
+          td &nbsp;
+          td=results[inx].FULLNAME
+          td &nbsp;
+          td=results[inx].DOB
+          td &nbsp;
+          td=results[inx].GENDER
+          td &nbsp;
+          td=results[inx].HEIGHT
+          td &nbsp;
+          td=results[inx].WEIGHT
+  // Put a click button that lets us return to the index page 
+  form(method='get', action='/')
+      input(type='submit', value='Return')
