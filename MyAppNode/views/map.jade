@@ -5,15 +5,22 @@ extend layout
 block navbarcontent
 
 block content
-  .container
-    body
+  body
+    .container
       script(src='http://d3js.org/d3.v3.min.js')
       script(src='http://d3js.org/topojson.v1.min.js')
       // I recommend you host this file on your own, since this will change without warning
       script(src='/js/map.js')
+      | 
+      br 
+      | 
+      br 
       h2 Summer Olympics Gold Map
-      p
-        a(href='http://datamaps.github.io/') DataMaps Project Homepage
+      | 
+      br 
+      p Move your curser over a country to see how many gold medals they have won. 
+      | 
+      br 
       #container1(style='position: relative; width: 80%; max-height: 450px;')
       script.
 
@@ -31,25 +38,22 @@ block content
         },
 
         data: {
-        USA: {fillKey: 'lt50' },
-        RUS: {fillKey: 'lt50' },
-        CAN: {fillKey: 'lt50' },
-        BRA: {fillKey: 'gt50' },
-        ARG: {fillKey: 'gt50'},
-        COL: {fillKey: 'gt50' },
-        AUS: {fillKey: 'gt50' },
-        ZAF: {fillKey: 'gt50' },
-        MAD: {fillKey: 'gt50' }
-        }
-        })
-        
-        //bubbles, custom popup on hover template
-        map.bubbles([
-        {name: 'Hot', latitude: 21.32, longitude: 5.32, radius: 10, fillKey: 'gt50'},
-        {name: 'Chilly', latitude: -25.32, longitude: 120.32, radius: 18, fillKey: 'lt50'},
-        {name: 'Hot again', latitude: 21.32, longitude: -84.32, radius: 8, fillKey: 'gt50'},
-        ], {
-        popupTemplate: function(geo, data) {
-        return "<div class='hoverinfo'>It is " + data.name + "</div>";
+        USA: {fillKey: 'defaultFill' },
+        RUS: {fillKey: 'defaultFill' },
+        CAN: {fillKey: 'defaultFill' },
+        BRA: {fillKey: 'defaultFill' },
+        ARG: {fillKey: 'defaultFill'},
+        COL: {fillKey: 'defaultFill' },
+        AUS: {fillKey: 'defaultFill' },
+        ZAF: {fillKey: 'defaultFill' },
+        MAD: {fillKey: 'defaultFill' }
         }
         });
+      | 
+      br 
+      | 
+      br 
+      | 
+      br 
+      p
+        a(href='http://datamaps.github.io/') Interested in DataMap templates?
