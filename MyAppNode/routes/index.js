@@ -25,8 +25,12 @@ exports.do_map = function(req, res){
   res.render('map.jade', {});
 };
 
-exports.do_coun = function(req, res){
+exports.do_cou = function(req, res){
   res.render('country.jade', {});
+};
+
+exports.do_ath = function(req, res){
+  res.render('athlete.jade', {});
 };
 //exports.do_quiz = function(req, res){
   //res.render('quiz.jade', {});
