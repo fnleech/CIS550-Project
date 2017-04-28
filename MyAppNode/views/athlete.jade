@@ -1,0 +1,28 @@
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /actor once
+// the user hits Submit
+block navbarcontent
+
+block content
+	&nbsp
+	&nbsp
+	.container
+		h2 Results
+			&nbsp
+			&nbsp
+			&nbsp
+			p Select the Athlete you are interested in finding more information about
+				&nbsp
+				&nbsp
+				&nbsp
+		form(name="Select Athlete", method = "get", action="/results")
+			div.input
+				span.label Athlete
+				+dropdown("Athlete",[
+				 	{text:"A"},
+				 	{text:"B"},
+				 	{text:"C"},
+				 	{text:"D"}
+				 ])
+			input(type='submit', value='Submit')
