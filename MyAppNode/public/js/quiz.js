@@ -4,13 +4,13 @@
 (function() {
   var questions = [{
     question: "Which country has the most number of gold medals in the 2012 Summer Olympics??",
-    choices: [Russia, USA, China, Great Britain, France],
+    choices: ["Russia", "USA", "China", "Great Britain", "France"],
   }, {
     question: "What's the best height to win a gold medal in swimming if you're a guy?",
     choices: [190, 163, 183, 177, 185],
   }, {
     question: "Which Summer Olympics was most expensive per athlete",
-    choices: [Soviet Union, London, Barcelona, Athens, Beijing],
+    choices: ["Soviet Union", "London", "Barcelona", "Athens", "Beijing"],
   }, {
     question: "From 1960-2012, how many Summer Olympics did the USA take home the most number of gold medals?",
     choices: [14, 13, 10, 9, 11],
