@@ -5,6 +5,7 @@
 var express = require('express')
   , routes = require('./routes')
   , country = require('./routes/country')
+  , athlete = require('./routes/athlete')
   , quiz = require('./routes/quiz')
   , userscore = require('./routes/userscore')
 	, map = require('./routes/mapquery.js')
