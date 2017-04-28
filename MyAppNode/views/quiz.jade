@@ -3,38 +3,21 @@ extend layout
 // Then we produce a form that triggers /actor once
 // the user hits Submit
 block navbarcontent
-    +nav_item("/") Sample Work
-    +nav_item("/") Your Work
-    +nav_item("/quiz", "active") Quiz
 
-    p Welcome!
-    +navbar("Menu", "dropdown_menu", "inverse")
-      +nav_item("/", "active") Home
-      +nav_item_dropdown("#")(label="Info on Olympics")
-        +nav_item("#") Olympics
-        +nav_item("#") Country
-        +nav_item("#") Sporting Events
-        +nav_item("#") Athletes
-        //+nav_divider
-        //+nav_header Nav header
-        //+nav_item("#") Separated link
-      +nav_item("/quiz", "active") Quiz
-      +nav_item("/") About
-      +nav_item("/reference") Reference
-      
 block content
-    script(type='text/javascript').
-        var local_results = !{results};
-    #container
-      #title
-        h1 Summer Olympics Quiz
-      br
-      #quiz
-      #next.button
-        a(href='#') Next
-      #prev.button
-        a(href='#') Prev
-      #start.button
-        a(href='#') Start Over
-    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-    script(type='text/javascript', src='/js/quiz.js')
+  .container
+      script(type='text/javascript').
+          var local_results = !{results};
+      #container
+        #title
+          h1 Summer Olympics Quiz
+        br
+        #quiz
+        #next.button
+          a(href='#') Next
+        #prev.button
+          a(href='#') Prev
+        #start.button
+          a(href='#') Start Over
+      script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+      script(type='text/javascript', src='/js/quiz.js')
