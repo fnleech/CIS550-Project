@@ -25,8 +25,7 @@ var dorelease = function(conn) {
 
 var query_athlete = function (conn, cb) {
   conn.execute(
-    "SELECT * FROM ATHLETE WHERE FULLNAME='" +
-    ":name'",
+    "SELECT * FROM ATHLETE WHERE FULLNAME=:name",
     [global_search],
     function(err, result)
     {
@@ -94,6 +93,6 @@ function output_table(res,info,results) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-    global_search = req.body.name;
+    global_search = "'" + req.body.name + "'";
     query_db(res);
 };
