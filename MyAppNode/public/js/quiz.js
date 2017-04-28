@@ -1,3 +1,11 @@
+//Run dynamic JS quiz to test the user's knowledge
+//Connect to MongoDB 
+var express = require('express');
+var router = express.Router();
+var mongojs= require('mongojs');
+var db = mongojs('mongodb://550G16:PENN550@ds163377.mlab.com:63377/db550', ['userscore']);
+const readline = require('readline') 
+// start quiz
 (function() {
   var questions = [{
     question: "Which country has the most number of gold medals in the 2012 Summer Olympics??",
@@ -147,7 +155,7 @@
       }
     });
   }
- // Computes score and returns a paragraph element to be displayed
+ // Calculate the score and display score
   function displayScore() {
     var score = $('<p>',{id: 'question'});
 
@@ -158,10 +166,19 @@
       }
     }
     
-    score.append(numCorrect + ' questions out of ' +
+    /////
+// Query the mongoDB, and call output_actors on the results
+//
+// res = HTTP result object sent back to the client
+
+// insert into Mongo
+  response = readline()
+  db.userscore.insert({ "username" : response, "score" : score });
+
+
+    // Now return user score
+    score.append('You got' + numCorrect + ' out of ' +
                  questions.length + ' correct!');
-
-
     
 
     return score;
