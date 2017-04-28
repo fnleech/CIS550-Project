@@ -24,7 +24,6 @@ block content
       #container1(style='position: relative; width: 80%; max-height: 450px;')
       script.
 
-        console.log(ugh);
         //basic map config with custom fills, mercator projection
         var mapArgs = {
         scope: 'world',
@@ -40,8 +39,11 @@ block content
 
         geographyConfig: {
             popupTemplate: function(geo, data) {
-              console.log(data);
-                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": 5" + "</strong></div>"
+                var medals = 0;
+                if (data.medals) {
+                    medals = data.medals;
+                }
+                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": " + medals "</strong></div>"
             }
         }
         };
