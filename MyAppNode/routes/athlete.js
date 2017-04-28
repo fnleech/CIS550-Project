@@ -83,6 +83,7 @@ function query_db(res) {
 // name = Name to query for
 // results = List object of query results
 function output_table(res,info,results) {
+    console.log(results);
 	res.render('athquery.jade',
 		   {   info: info,
                results: results }
