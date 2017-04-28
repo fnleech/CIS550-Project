@@ -1,4 +1,4 @@
-/*var async = require('async');
+var async = require('async');
 var oracledb = require('oracledb');
 var global_res;
 
@@ -21,7 +21,7 @@ var dorelease = function(conn) {
 };
 
 var domapquery = function (conn, cb) {
-  conn.execute("Select C.CID, COALESCE(Count(R.Medal), 0) " + 
+  conn.execute("Select C.CID, COALESCE(Count(R.Medal), 0) AS MEDALS " + 
   "From Athlete A, Country C, AFromC AFC, Result R Where C.CID = AFC.CID " +
   "and A.AID = AFC.AID and A.AID = R.AID and R.Medal = 'Gold'" +
   "Group by C.CID Order by C.CID", 
@@ -29,7 +29,6 @@ var domapquery = function (conn, cb) {
       if (err) {
         return cb(err, conn);
       } else {
-		    console.log(result.rows);
         display_mapresults(global_res, result.rows);
         return cb(null, conn);
       }
@@ -49,14 +48,16 @@ function query_db(res) {
 			if (conn)
 				dorelease(conn);
 		});
-}*/
-
-var mapresults = {};
+}
 
 // pass the results from  here to map.jade
 function display_mapresults(res, mapresults) {
+	var data = {};
+	for (var i = 0; i < mapresults.length; i++) {
+			data[mapresults[i].CID] = { medals: mapresults[i].MEDALS };
+	}
 	res.render('map.jade',
-		   { mapresults: JSON.stringify(mapresults) }
+		   { mapresults: data }
 	  );
 }
 

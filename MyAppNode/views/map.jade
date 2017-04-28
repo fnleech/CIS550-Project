@@ -23,7 +23,7 @@ block content
       br 
       #container1(style='position: relative; width: 80%; max-height: 450px;')
       script.
-
+        console.log(mapresults);
         //basic map config with custom fills, mercator projection
         var map = new Datamap({
         scope: 'world',
@@ -37,21 +37,11 @@ block content
         gt50: '#FFB67A'
         },
 
-        data: {
-        USA: {fillKey: 'defaultFill' },
-        RUS: {fillKey: 'defaultFill' },
-        CAN: {fillKey: 'defaultFill' },
-        BRA: {fillKey: 'defaultFill' },
-        ARG: {fillKey: 'defaultFill'},
-        COL: {fillKey: 'defaultFill' },
-        AUS: {fillKey: 'defaultFill' },
-        ZAF: {fillKey: 'defaultFill' },
-        MAD: {fillKey: 'defaultFill' }
-        },
+        data: mapresults;
 
         geographyConfig: {
             popupTemplate: function(geo) {
-                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": 5" + "</strong></div>"
+                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": " + data[geo.id].medals + "</strong></div>"
             }
         }
         });
