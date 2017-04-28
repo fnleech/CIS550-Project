@@ -40,10 +40,10 @@ block content
         geographyConfig: {
             popupTemplate: function(geo, data) {
                 var medals = 0;
-                if (data.medals) {
+                if (data) {
                     medals = data.medals;
                 }
-                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": " + data.medals "</strong></div>"
+                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": " + data + "</strong></div>"
             }
         }
         };
