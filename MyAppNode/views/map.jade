@@ -23,7 +23,7 @@ block content
       br 
       #container1(style='position: relative; width: 80%; max-height: 450px;')
       script.
-        var ugh = !{mapresults};
+
         console.log(ugh);
         //basic map config with custom fills, mercator projection
         var mapArgs = {
@@ -40,12 +40,12 @@ block content
 
         geographyConfig: {
             popupTemplate: function(geo, data) {
+              console.log(data);
                 return '<div class="hoverinfo"><strong>' + geo.properties.name + ": 5" + "</strong></div>"
             }
         }
         };
         mapArgs.data = !{mapresults};
-        console.log(mapArgs.data);
         var map = new Datamap(mapArgs);
       | 
       br 
