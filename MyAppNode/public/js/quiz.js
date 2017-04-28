@@ -160,6 +160,10 @@
     
     score.append(numCorrect + ' questions out of ' +
                  questions.length + ' correct!');
+
+
+    
+
     return score;
   } 
 

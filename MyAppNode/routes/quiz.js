@@ -152,10 +152,18 @@ var doquery5 = function (results, conn, cb) {
   	}
 	});}*/
 
+var results = [
+	2,
+	5,
+	2,
+	2,
+	2
+];
+
 function display_quiz(res, results) {
 	res.render('quiz.jade', 
 		{ results: JSON.stringify(results) });
-}
+};
 
 exports.load_quiz = function(req, res){
     //query_db(res);

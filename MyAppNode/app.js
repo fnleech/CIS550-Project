@@ -6,7 +6,7 @@ var express = require('express')
   , routes = require('./routes')
   , query = require('./routes/query')
   , quiz = require('./routes/quiz')
-  , map = require('.routes/mapquery')
+  //, map = require('./routes/map')
   , http = require('http')
   , path = require('path')
   , stylus = require("stylus")
@@ -22,7 +22,8 @@ init_app(app);
 app.get('/', routes.do_work);
 app.get('/quiz', quiz.load_quiz);
 app.get('/query', query.do_work);
-app.get('/map', map.display_mapresults);
+app.get('/reference', routes.do_ref);
+//app.get('/map', map.display_mapresults);
 
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){

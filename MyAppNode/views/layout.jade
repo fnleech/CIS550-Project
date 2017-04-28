@@ -3,15 +3,6 @@ append styles
     link(type='text/css', rel='stylesheet', href='/stylesheets/carousel.css')
     // Custom styles for this template 
 block body
-    header 
-    a(href='https://twitter.com/olympics')
-        img(src='/logo-twitter.png' width="24" height="20" alt="Image size dimensions")
-    a(href='https://www.facebook.com/olympics')
-        img(src='/logo-fb.png' width="20" height="20" alt="Image size dimensions")
-    a(href='https://www.youtube.com/user/olympic')
-        img(src='/logo-youtube.png' width="25" height="20" alt="Image size dimensions")
-    a(href='https://plus.google.com/+Olympics')
-        img(src='/logo-google.png' width="20" height="20" alt="Image size dimensions")
     // NAVBAR   
     // Static navbar
     .navbar-wrapper 
@@ -30,7 +21,7 @@ block body
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li.active
-                            a(href='#') Home
+                            a(href='/') Home
                         li.dropdown
                                 a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
                                     | Olympics
@@ -48,7 +39,7 @@ block body
                         li
                             a(href='/quiz') Quiz
                         li
-                            a(href='#about') Quiz Results    
+                            // a(href='/quizresults') Quiz Results    
                         li
                             a(href='/map') Gold Medals Map
                         li
@@ -58,4 +49,16 @@ block body
                 block content
     footer.footer
         .container
+            a(href='https://twitter.com/olympics')
+                img(src='/logo-twitter.png' width="24" height="20" alt="Image size dimensions")
+            | &nbsp;
+            a(href='https://www.facebook.com/olympics')
+                img(src='/logo-fb.png' width="20" height="20" alt="Image size dimensions")
+            | &nbsp;  
+            a(href='https://www.youtube.com/user/olympic')
+                img(src='/logo-youtube.png' width="25" height="20" alt="Image size dimensions")
+            | &nbsp;
+            a(href='https://plus.google.com/+Olympics')
+                img(src='/logo-google.png' width="20" height="20" alt="Image size dimensions")
+            | &nbsp;
             p.text-muted Running on node with Express, Jade, Bootstrap
