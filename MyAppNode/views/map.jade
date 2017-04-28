@@ -39,11 +39,12 @@ block content
 
         geographyConfig: {
             popupTemplate: function(geo, data) {
-                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": " + data.USA.medals + "</strong></div>"
+                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": 5" + "</strong></div>"
             }
         }
         };
         mapArgs.data = !{mapresults};
+        console.log(mapArgs.data);
         var map = new Datamap(mapArgs);
       | 
       br 
