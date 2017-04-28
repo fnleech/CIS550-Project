@@ -7,10 +7,10 @@ block navbarcontent
 block content
 	.container
 		h1 Results
-
-		table.table.table-hover.table-bordered
-			thead
-				tr
+			p Select the Summer Olympics year that you're interested in.
+		form(name="Select Olympics", method = "post")
+			div.input
+				span.label Olympics
 				+dropdown("Summer Olympics",[
 				 	{text:"London 2012"},
 				 	{text:"Beijing 2008"},
