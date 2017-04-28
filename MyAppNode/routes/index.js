@@ -23,6 +23,7 @@ exports.do_olym = function(req, res){
 
 exports.do_map = function(req, res){
   res.render('map.jade', {});
+};
 
 exports.do_coun = function(req, res){
   res.render('country.jade', {});
