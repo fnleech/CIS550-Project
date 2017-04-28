@@ -2,7 +2,7 @@
 
 // Query the oracle database, and call output_actors on the results 
 // req is an object containing information about the HTTP request that raised the event. In response to req, you use res to send back the desired HTTP response
-
+/*
 var async = require('async');
 var oracledb = require('oracledb');
 var global_res;
@@ -149,16 +149,16 @@ var doquery5 = function (results, conn, cb) {
 			display_quiz(global_res, results);
 			return cb(null, conn);
   	}
-	});}
+	});}*/
 
 //Connect to MongoDB 
-var mongojs= require('mongojs');
-var db = mongojs('mongodb://550G16:PENN550@ds163377.mlab.com:63377/db550', ['userscore']);
+//var mongojs= require('mongojs');
+//var db = mongojs('mongodb://550G16:PENN550@ds163377.mlab.com:63377/db550', ['userscore']);
 
 exports.save_results = function(req, res) {
 	if (req.body.name && req.body.score) {
 		console.log("recieved a post with username: " + req.body.name);
-		db.userscore.insert({ "username" : response, "score" : score });
+		//db.userscore.insert({ "username" : req.body.name, "score" : req.body.score });
 	}
 }
 
@@ -169,5 +169,6 @@ function display_quiz(res, results) {
 };
 
 exports.load_quiz = function(req, res){
-    query_db(res);
+    //query_db(res);
+	display_quiz(res, [5,5,5,5,5]);
 };
