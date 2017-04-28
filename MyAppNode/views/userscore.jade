@@ -5,25 +5,46 @@ extend layout
 block navbarcontent
 
 block content
-  .container
-    p
-      | 
-      br 
-      | 
-      br 
-      h2 User Score Dashboard
-      | 
-      br 
-    // Create a table with one row per result
-    form(method="get", action="/userscore")
-    p
-      table
+  .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+    h1.page-header Dashboard
+    .table-responsive
+      form(method="get", action="/userscore")
+      p
+      table.table.table-striped
+        thead
+          tr
+            th #User
+            th Username
+            th Score
+        tbody
         - for (var inx = 0; inx < results.length; inx++)
           tr
+            td=inx+1
             td=results[inx].username
-            td &nbsp;
             td=results[inx].score
             td &nbsp;
-    // Put a click button that lets us return to the index page 
-    form(method='get', action='/')
-        input(type='submit', value='Return')
+      | 
+      br 
+      | 
+      br 
+      | 
+      br 
+      | 
+      br 
+      | 
+      br 
+      | 
+      br 
+      | 
+      br 
+      | 
+      br 
+      | 
+      br 
+      // Put a click button that lets us return to the index page 
+      form(method='get', action='/')
+          input(type='submit', value='Return')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+// script(src="js/jquery.min.js")
+// script(src="js/bootstrap.min.js")
