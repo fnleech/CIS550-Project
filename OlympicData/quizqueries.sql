@@ -86,7 +86,7 @@ Select Count(*) AS USAwins
 From GMCount GMC
 Where GMC.CID = 'USA'; 
 
-# How many gold medals has the smallest (by population) IOC Country won? What is the country?
+# How many gold medals has the smallest (by population) IOC Country won?
 WITH athmedals AS(
 SELECT AFC.CID, R.Medal, count(*) as MedalCount
 FROM result R
