@@ -28,6 +28,8 @@ app.get('/map', routes.do_map);
 app.get('/country', routes.do_coun);
 //app.get('/map', map.display_mapresults);
 
+app.post('/quiz', quiz.save_results);
+
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

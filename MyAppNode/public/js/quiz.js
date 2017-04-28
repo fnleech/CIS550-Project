@@ -1,10 +1,5 @@
 //Run dynamic JS quiz to test the user's knowledge
-//Connect to MongoDB 
-var express = require('express');
-var router = express.Router();
-var mongojs= require('mongojs');
-var db = mongojs('mongodb://550G16:PENN550@ds163377.mlab.com:63377/db550', ['userscore']);
-const readline = require('readline') 
+
 // start quiz
 (function() {
   var questions = [{
@@ -64,6 +59,31 @@ const readline = require('readline')
     choose();
     questionCounter--;
     displayNext();
+  });
+
+    // Click handler for the 'Start Over' button
+  $('#score').on('click', function (e) {
+    e.preventDefault();
+    
+    if(quiz.is(':animated')) {
+      return false;
+    }
+
+    var data = {};
+    data.name = prompt("Enter your name:");
+    data.score = -1;
+    if (data.name) {
+      data.score = $('p[id="question"]').attr("score");
+    }
+    if (data.score !== -1) {
+      $.ajax({
+        type: "POST",
+        url: "/quiz",
+        data: data
+      });
+    }
+
+    $('#score').hide();
   });
   
   // Click handler for the 'Start Over' button
@@ -128,6 +148,8 @@ const readline = require('readline')
   
   // Displays next requested element
   function displayNext() {
+    $('#start').hide();
+    $('#score').hide();
     quiz.fadeOut(function() {
       $('#question').remove();
       
@@ -151,33 +173,25 @@ const readline = require('readline')
         quiz.append(scoreElem).fadeIn();
         $('#next').hide();
         $('#prev').hide();
+        $('#score').show();
         $('#start').show();
       }
     });
   }
  // Calculate the score and display score
   function displayScore() {
-    var score = $('<p>',{id: 'question'});
-
     var numCorrect = 0;
     for (var i = 0; i < selections.length; i++) {
       if (questions[i].choices[selections[i]] === local_results[i]) {
         numCorrect++;
       }
     }
-    
-    /////
-// Query the mongoDB, and call output_actors on the results
-//
-// res = HTTP result object sent back to the client
 
-// insert into Mongo
-  response = readline()
-  db.userscore.insert({ "username" : response, "score" : score });
-
+    var score = $('<p>',{id: 'question'});
+    score.attr('score', numCorrect);
 
     // Now return user score
-    score.append('You got' + numCorrect + ' out of ' +
+    score.append('You got ' + numCorrect + ' out of ' +
                  questions.length + ' correct!');
     
 
