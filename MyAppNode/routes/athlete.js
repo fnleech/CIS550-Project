@@ -93,6 +93,6 @@ function output_table(res,info,results) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-    global_search = req.query.name;
+    global_search = req.body.name;
     query_db(res);
 };

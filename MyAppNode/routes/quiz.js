@@ -170,5 +170,4 @@ function display_quiz(res, results) {
 
 exports.load_quiz = function(req, res){
     //query_db(res);
-	display_quiz(res, [5,5,5,5,5]);
 };

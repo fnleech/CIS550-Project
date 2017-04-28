@@ -27,7 +27,7 @@ app.get('/reference', routes.do_ref);
 app.get('/olympics', routes.do_olym);
 //app.get('/map', routes.do_map);
 app.get('/userscore', userscore.show_scores);
-app.get('/athresults', athlete.do_work);
+app.post('/athresults', athlete.do_work);
 
 app.get('/map', map.load_mapresults);
 app.get('/country', routes.do_cou);
