@@ -52,10 +52,12 @@ function query_db(res) {
 
 // pass the results from  here to map.jade
 function display_mapresults(res, mapresults) {
+	console.log(mapresults);
 	var data = {};
 	for (var i = 0; i < mapresults.length; i++) {
 			data[mapresults[i].CID] = { medals: mapresults[i].MEDALS };
 	}
+	console.log(data);
 	res.render('map.jade',
 		   { mapresults: data }
 	  );
