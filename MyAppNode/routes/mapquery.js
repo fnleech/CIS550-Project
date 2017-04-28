@@ -1,4 +1,4 @@
-/*var async = require('async');
+var async = require('async');
 var oracledb = require('oracledb');
 var global_res;
 
@@ -48,7 +48,7 @@ function query_db(res) {
 			if (conn)
 				dorelease(conn);
 		});
-}*/
+}
 
 // pass the results from  here to map.jade
 function display_mapresults(res, mapresults) {
