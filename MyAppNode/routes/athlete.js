@@ -25,7 +25,7 @@ var dorelease = function(conn) {
 
 var query_athlete = function (conn, cb) {
   conn.execute(
-    "SELECT * FROM ATHLETE WHERE FULLNAME='Christoph Wolf'",
+    "SELECT * FROM ATHLETE WHERE FULLNAME='Usain St. Leo Bolt'",
     //[global_search],
     function(err, result)
     {
@@ -42,7 +42,7 @@ var query_athlete = function (conn, cb) {
 
 var query_results = function (conn, cb) {
   conn.execute(
-    "SELECT * RESULT WHERE AID = :name",
+    "SELECT * FROM RESULT WHERE AID = :name",
     [global_search],
     function(err, result)
     {
