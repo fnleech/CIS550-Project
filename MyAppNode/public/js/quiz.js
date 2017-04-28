@@ -153,7 +153,7 @@
 
     var numCorrect = 0;
     for (var i = 0; i < selections.length; i++) {
-      if (selections[i] === local_results[i]) {
+      if (questions[i].choices[selections[i]] === local_results[i]) {
         numCorrect++;
       }
     }
