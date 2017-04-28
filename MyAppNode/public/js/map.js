@@ -684,7 +684,7 @@
                     properties: {
                         name: "Switzerland"
                     },
-                    id: "CHE",
+                    id: "SUI",
                     arcs: [
                         [-51, 161, 162, 163]
                     ]
@@ -693,7 +693,7 @@
                     properties: {
                         name: "Chile"
                     },
-                    id: "CHL",
+                    id: "CHI",
                     arcs: [
                         [
                             [-24, 164]
@@ -748,7 +748,7 @@
                     properties: {
                         name: "Republic of the Congo"
                     },
-                    id: "COG",
+                    id: "CGO",
                     arcs: [
                         [-12, 203, 204, -196, -127, -202]
                     ]
@@ -766,7 +766,7 @@
                     properties: {
                         name: "Costa Rica"
                     },
-                    id: "CRI",
+                    id: "CRC",
                     arcs: [
                         [211, 212, 213, 214]
                     ]
@@ -811,7 +811,7 @@
                     properties: {
                         name: "Germany"
                     },
-                    id: "DEU",
+                    id: "GER",
                     arcs: [
                         [222, 223, -220, -52, -164, 224, 225, -64, 226, 227, 228]
                     ]
@@ -829,7 +829,7 @@
                     properties: {
                         name: "Denmark"
                     },
-                    id: "DNK",
+                    id: "DEN",
                     arcs: [
                         [
                             [233]
@@ -852,7 +852,7 @@
                     properties: {
                         name: "Algeria"
                     },
-                    id: "DZA",
+                    id: "ALG",
                     arcs: [
                         [237, 238, 239, 240, 241, 242, 243, 244]
                     ]
@@ -924,7 +924,7 @@
                     properties: {
                         name: "Fiji"
                     },
-                    id: "FJI",
+                    id: "FIJ",
                     arcs: [
                         [
                             [272]
@@ -1023,7 +1023,7 @@
                     properties: {
                         name: "Gambia"
                     },
-                    id: "GMB",
+                    id: "GAM",
                     arcs: [
                         [302, 303]
                     ]
@@ -1032,7 +1032,7 @@
                     properties: {
                         name: "Guinea Bissau"
                     },
-                    id: "GNB",
+                    id: "GBS",
                     arcs: [
                         [304, 305, -300]
                     ]
@@ -1041,7 +1041,7 @@
                     properties: {
                         name: "Equatorial Guinea"
                     },
-                    id: "GNQ",
+                    id: "GEQ",
                     arcs: [
                         [306, -191, -288]
                     ]
@@ -1050,7 +1050,7 @@
                     properties: {
                         name: "Greece"
                     },
-                    id: "GRC",
+                    id: "GRE",
                     arcs: [
                         [
                             [307]
@@ -1073,7 +1073,7 @@
                     properties: {
                         name: "Guatemala"
                     },
-                    id: "GTM",
+                    id: "GUA",
                     arcs: [
                         [312, 313, -100, 314, 315, 316]
                     ]
@@ -1091,7 +1091,7 @@
                     properties: {
                         name: "Honduras"
                     },
-                    id: "HND",
+                    id: "HON",
                     arcs: [
                         [320, 321, -316, 322, 323]
                     ]
@@ -1100,7 +1100,7 @@
                     properties: {
                         name: "Croatia"
                     },
-                    id: "HRV",
+                    id: "CRO",
                     arcs: [
                         [324, -92, 325, 326, 327, 328]
                     ]
@@ -1109,7 +1109,7 @@
                     properties: {
                         name: "Haiti"
                     },
-                    id: "HTI",
+                    id: "HAI",
                     arcs: [
                         [-237, 329]
                     ]
@@ -1127,7 +1127,7 @@
                     properties: {
                         name: "Indonesia"
                     },
-                    id: "IDN",
+                    id: "INA",
                     arcs: [
                         [
                             [335]
@@ -1192,7 +1192,7 @@
                     properties: {
                         name: "Iran"
                     },
-                    id: "IRN",
+                    id: "IRI",
                     arcs: [
                         [356, -6, 357, 358, 359, 360, -55, -34, -57, 361]
                     ]
@@ -1307,7 +1307,7 @@
                     properties: {
                         name: "Cambodia"
                     },
-                    id: "KHM",
+                    id: "CAM",
                     arcs: [
                         [399, 400, 401, 402]
                     ]
@@ -1325,7 +1325,7 @@
                     properties: {
                         name: "Kosovo"
                     },
-                    id: "-99",
+                    id: "KOS",
                     arcs: [
                         [-18, 405, 406, 407]
                     ]
@@ -1334,7 +1334,7 @@
                     properties: {
                         name: "Kuwait"
                     },
-                    id: "KWT",
+                    id: "KUW",
                     arcs: [
                         [408, 409, -364]
                     ]
@@ -1352,7 +1352,7 @@
                     properties: {
                         name: "Lebanon"
                     },
-                    id: "LBN",
+                    id: "LIB",
                     arcs: [
                         [-374, 413, 414]
                     ]
@@ -1370,7 +1370,7 @@
                     properties: {
                         name: "Libya"
                     },
-                    id: "LBY",
+                    id: "LBA",
                     arcs: [
                         [417, -245, 418, 419, -250, 420, 421]
                     ]
@@ -1379,7 +1379,7 @@
                     properties: {
                         name: "Sri Lanka"
                     },
-                    id: "LKA",
+                    id: "SRI",
                     arcs: [
                         [422]
                     ]
@@ -1388,7 +1388,7 @@
                     properties: {
                         name: "Lesotho"
                     },
-                    id: "LSO",
+                    id: "LES",
                     arcs: [
                         [423]
                     ]
@@ -1415,7 +1415,7 @@
                     properties: {
                         name: "Latvia"
                     },
-                    id: "LVA",
+                    id: "LAT",
                     arcs: [
                         [428, -262, 429, -94, -427]
                     ]
@@ -1442,7 +1442,7 @@
                     properties: {
                         name: "Madagascar"
                     },
-                    id: "MDG",
+                    id: "MAD",
                     arcs: [
                         [434]
                     ]
@@ -1478,7 +1478,7 @@
                     properties: {
                         name: "Myanmar"
                     },
-                    id: "MMR",
+                    id: "MYA",
                     arcs: [
                         [442, -78, -353, -173, -412, 443]
                     ]
@@ -1496,7 +1496,7 @@
                     properties: {
                         name: "Mongolia"
                     },
-                    id: "MNG",
+                    id: "MGL",
                     arcs: [
                         [446, -183]
                     ]
@@ -1514,7 +1514,7 @@
                     properties: {
                         name: "Mauritania"
                     },
-                    id: "MRT",
+                    id: "MTN",
                     arcs: [
                         [455, 456, 457, -240, -440]
                     ]
@@ -1523,7 +1523,7 @@
                     properties: {
                         name: "Malawi"
                     },
-                    id: "MWI",
+                    id: "MAW",
                     arcs: [
                         [-455, 458, 459]
                     ]
@@ -1532,7 +1532,7 @@
                     properties: {
                         name: "Malaysia"
                     },
-                    id: "MYS",
+                    id: "MAS",
                     arcs: [
                         [
                             [460, 461]
@@ -1564,7 +1564,7 @@
                     properties: {
                         name: "Niger"
                     },
-                    id: "NER",
+                    id: "NIG",
                     arcs: [
                         [-75, -441, -238, -418, 468, -194, 469, -71]
                     ]
@@ -1573,7 +1573,7 @@
                     properties: {
                         name: "Nigeria"
                     },
-                    id: "NGA",
+                    id: "NGR",
                     arcs: [
                         [470, -72, -470, -193]
                     ]
@@ -1582,7 +1582,7 @@
                     properties: {
                         name: "Nicaragua"
                     },
-                    id: "NIC",
+                    id: "NCA",
                     arcs: [
                         [471, -324, 472, -213]
                     ]
@@ -1591,7 +1591,7 @@
                     properties: {
                         name: "Netherlands"
                     },
-                    id: "NLD",
+                    id: "NED",
                     arcs: [
                         [-227, -63, 473]
                     ]
@@ -1620,7 +1620,7 @@
                     properties: {
                         name: "Nepal"
                     },
-                    id: "NPL",
+                    id: "NEP",
                     arcs: [
                         [-352, -176]
                     ]
@@ -1643,7 +1643,7 @@
                     properties: {
                         name: "Oman"
                     },
-                    id: "OMN",
+                    id: "OMA",
                     arcs: [
                         [
                             [482, 483, -22, 484]
@@ -1684,7 +1684,7 @@
                     properties: {
                         name: "Philippines"
                     },
-                    id: "PHL",
+                    id: "PHI",
                     arcs: [
                         [
                             [490]
@@ -1742,7 +1742,7 @@
                     properties: {
                         name: "Puerto Rico"
                     },
-                    id: "PRI",
+                    id: "PUR",
                     arcs: [
                         [505]
                     ]
@@ -1760,7 +1760,7 @@
                     properties: {
                         name: "Portugal"
                     },
-                    id: "PRT",
+                    id: "POR",
                     arcs: [
                         [-259, 509]
                     ]
@@ -1769,7 +1769,7 @@
                     properties: {
                         name: "Paraguay"
                     },
-                    id: "PRY",
+                    id: "PAR",
                     arcs: [
                         [-104, -105, -26]
                     ]
@@ -1861,7 +1861,7 @@
                     properties: {
                         name: "Saudi Arabia"
                     },
-                    id: "SAU",
+                    id: "KSA",
                     arcs: [
                         [538, -382, -365, -410, 539, -512, 540, -23, -484, 541]
                     ]
@@ -1870,7 +1870,7 @@
                     properties: {
                         name: "Sudan"
                     },
-                    id: "SDN",
+                    id: "SUD",
                     arcs: [
                         [542, 543, -123, 544, -421, -249, 545, -254, -268, 546]
                     ]
@@ -1897,7 +1897,7 @@
                     properties: {
                         name: "Solomon Islands"
                     },
-                    id: "SLB",
+                    id: "SOL",
                     arcs: [
                         [
                             [552]
@@ -1929,7 +1929,7 @@
                     properties: {
                         name: "El Salvador"
                     },
-                    id: "SLV",
+                    id: "ESA",
                     arcs: [
                         [558, -317, -322]
                     ]
@@ -1983,7 +1983,7 @@
                     properties: {
                         name: "Slovenia"
                     },
-                    id: "SVN",
+                    id: "SLO",
                     arcs: [
                         [-49, -335, -328, 565, -378]
                     ]
@@ -2019,7 +2019,7 @@
                     properties: {
                         name: "Chad"
                     },
-                    id: "TCD",
+                    id: "CHA",
                     arcs: [
                         [-469, -422, -545, -122, -195]
                     ]
@@ -2028,7 +2028,7 @@
                     properties: {
                         name: "Togo"
                     },
-                    id: "TGO",
+                    id: "TOG",
                     arcs: [
                         [570, -296, -76, -69]
                     ]
@@ -2073,7 +2073,7 @@
                     properties: {
                         name: "Trinidad and Tobago"
                     },
-                    id: "TTO",
+                    id: "TRI",
                     arcs: [
                         [577]
                     ]
@@ -2105,7 +2105,7 @@
                     properties: {
                         name: "Taiwan"
                     },
-                    id: "TWN",
+                    id: "TPE",
                     arcs: [
                         [581]
                     ]
@@ -2114,7 +2114,7 @@
                     properties: {
                         name: "United Republic of Tanzania"
                     },
-                    id: "TZA",
+                    id: "TAN",
                     arcs: [
                         [-394, 582, -448, -460, 583, -199, -62, -536, 584]
                     ]
@@ -2141,7 +2141,7 @@
                     properties: {
                         name: "Uruguay"
                     },
-                    id: "URY",
+                    id: "URU",
                     arcs: [
                         [-113, 586, -28]
                     ]
@@ -2206,16 +2206,16 @@
                     properties: {
                         name: "Vietnam"
                     },
-                    id: "VNM",
+                    id: "VIE",
                     arcs: [
-                        [599, -402, -413, -171]
+                        [5, -402, -413, -171]
                     ]
                 }, {
                     type: "MultiPolygon",
                     properties: {
                         name: "Vanuatu"
                     },
-                    id: "VUT",
+                    id: "VAN",
                     arcs: [
                         [
                             [600]
@@ -2247,7 +2247,7 @@
                     properties: {
                         name: "South Africa"
                     },
-                    id: "ZAF",
+                    id: "RSA",
                     arcs: [
                         [-467, -118, 603, -452, -568, -450, 604],
                         [-424]
@@ -2257,7 +2257,7 @@
                     properties: {
                         name: "Zambia"
                     },
-                    id: "ZMB",
+                    id: "ZAM",
                     arcs: [
                         [-459, -454, 605, -120, -466, -7, -200, -584]
                     ]
@@ -2266,7 +2266,7 @@
                     properties: {
                         name: "Zimbabwe"
                     },
-                    id: "ZWE",
+                    id: "ZIM",
                     arcs: [
                         [-604, -121, -606, -453]
                     ]
