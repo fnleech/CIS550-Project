@@ -59,7 +59,3 @@ function display_mapresults(res, mapresults) {
 		   { mapresults: JSON.stringify(mapresults) }
 	  );
 }
-
-// if 
-//a.properties.name == local_mapresuts[i,1]
-// then print local_mapresults[i,2]

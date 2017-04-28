@@ -47,6 +47,12 @@ block content
         AUS: {fillKey: 'defaultFill' },
         ZAF: {fillKey: 'defaultFill' },
         MAD: {fillKey: 'defaultFill' }
+        },
+
+        geographyConfig: {
+            popupTemplate: function(geo) {
+                return '<div class="hoverinfo"><strong>' + geo.properties.name + ": 5" + "</strong></div>"
+            }
         }
         });
       | 
