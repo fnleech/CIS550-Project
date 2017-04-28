@@ -24,10 +24,10 @@ app.get('/quiz', quiz.load_quiz);
 app.get('/query', query.do_work);
 app.get('/reference', routes.do_ref);
 app.get('/olympics', routes.do_olym);
-app.get('/map', routes.do_map);
+//app.get('/map', routes.do_map);
 app.get('/userscore', userscore.show_scores);
 
-//app.get('/map', map.display_mapresults);
+app.get('/map', map.load_mapresults);
 app.get('/country', routes.do_cou);
 app.get('/athlete', routes.do_ath);
 

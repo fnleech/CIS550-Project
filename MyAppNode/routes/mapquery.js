@@ -37,7 +37,7 @@ var domapquery = function (conn, cb) {
 };
 
 
-function query_db(res, login) {
+function query_db(res) {
 	global_res = res;
 	async.waterfall(
 		[
@@ -59,3 +59,7 @@ function display_mapresults(res, mapresults) {
 		   { mapresults: JSON.stringify(mapresults) }
 	  );
 }
+
+exports.load_mapresults = function(req, res){
+  query_db(res);
+};
