@@ -25,6 +25,7 @@ app.get('/query', query.do_work);
 app.get('/reference', routes.do_ref);
 app.get('/olympics', routes.do_olym);
 app.get('/map', routes.do_map);
+app.get('/country', routes.do_coun);
 //app.get('/map', map.display_mapresults);
 
 // Listen on the port we specify

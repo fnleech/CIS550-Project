@@ -1,0 +1,19 @@
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /actor once
+// the user hits Submit
+block navbarcontent
+
+block content
+	.container
+		h1 Results
+			p Select the Country that you're interested in.
+		form(name=" ", method = "post")
+			div.input
+				span.label Olympics
+				+dropdown("Summer Olympics",[
+				 	{text:"London 2012"},
+				 	{text:"Beijing 2008"},
+				 	{text:"Athens 2004"},
+				 	{text:"Sydney 2000"}
+				 ]) 
