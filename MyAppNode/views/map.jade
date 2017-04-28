@@ -23,7 +23,7 @@ block content
       br 
       #container1(style='position: relative; width: 80%; max-height: 450px;')
       script.
-        console.log(!{mapresults});
+
         //basic map config with custom fills, mercator projection
         var map = new Datamap({
         scope: 'world',
@@ -40,7 +40,7 @@ block content
         data: !{mapresults};
 
         geographyConfig: {
-            popupTemplate: function(geo) {
+            popupTemplate: function(geo, data) {
                 return '<div class="hoverinfo"><strong>' + geo.properties.name + ": " + data[geo.id].medals + "</strong></div>"
             }
         }
