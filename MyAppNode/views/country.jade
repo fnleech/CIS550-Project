@@ -5,15 +5,23 @@ extend layout
 block navbarcontent
 
 block content
+	&nbsp
+	&nbsp
 	.container
-		h1 Results
-			p Select the Country that you're interested in.
-		form(name=" ", method = "post")
+		h2 Results
+			&nbsp
+			&nbsp
+			&nbsp
+			p Select the Country you are interested in finding more information about
+				&nbsp
+				&nbsp
+				&nbsp
+		form(name="Select Country", method = "post")
 			div.input
-				span.label Olympics
-				+dropdown("Summer Olympics",[
-				 	{text:"London 2012"},
-				 	{text:"Beijing 2008"},
-				 	{text:"Athens 2004"},
-				 	{text:"Sydney 2000"}
-				 ]) 
+				span.label Country
+				+dropdown("Country",[
+				 	{text:"A"},
+				 	{text:"B"},
+				 	{text:"C"},
+				 	{text:"D"}
+				 ])

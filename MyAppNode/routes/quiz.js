@@ -146,11 +146,22 @@ var doquery5 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.push(rows.rows[0].name);
+			results.push(rows.rows[0].MedalCount);
 			console.log(results);
 			return cb(null, conn);
   	}
 	});}*/
+
+//Connect to MongoDB 
+//var mongojs= require('mongojs');
+//var db = mongojs('mongodb://550G16:PENN550@ds163377.mlab.com:63377/db550', ['userscore']);
+
+exports.save_results = function(req, res) {
+	if (req.body.name && req.body.score) {
+		console.log("recieved a post with username: " + req.body.name);
+		//db.userscore.insert({ "username" : response, "score" : score });
+	}
+}
 
 
 function display_quiz(res, results) {

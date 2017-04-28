@@ -1,27 +1,22 @@
 //Run dynamic JS quiz to test the user's knowledge
-//Connect to MongoDB 
-var express = require('express');
-var router = express.Router();
-var mongojs= require('mongojs');
-var db = mongojs('mongodb://550G16:PENN550@ds163377.mlab.com:63377/db550', ['userscore']);
-const readline = require('readline') 
+
 // start quiz
 (function() {
   var questions = [{
     question: "Which country has the most number of gold medals in the 2012 Summer Olympics??",
-    choices: [2, 5, 10, 15, 20],
+    choices: ["Russia", "USA", "China", "Great Britain", "France"],
   }, {
     question: "What's the best height to win a gold medal in swimming if you're a guy?",
-    choices: [3, 6, 9, 12, 18],
+    choices: [190, 163, 183, 177, 185],
   }, {
     question: "Which Summer Olympics was most expensive per athlete",
-    choices: [72, 99, 108, 134, 156],
+    choices: ["Soviet Union", "London", "Barcelona", "Athens", "Beijing"],
   }, {
     question: "From 1960-2012, how many Summer Olympics did the USA take home the most number of gold medals?",
-    choices: [4, 5, 6, 7, 8],
+    choices: [14, 13, 10, 9, 11],
   }, {
-    question: "How many gold medals has the smallest IOC Country (by population) won? What is the country?",
-    choices: [20, 30, 40, 50, 64],
+    question: "How many gold medals has the smallest IOC Country (by population) won?",
+    choices: [53, 11, 32, 60, 29],
   }];
   
   //keep track of the question number
@@ -64,6 +59,31 @@ const readline = require('readline')
     choose();
     questionCounter--;
     displayNext();
+  });
+
+    // Click handler for the 'Start Over' button
+  $('#score').on('click', function (e) {
+    e.preventDefault();
+    
+    if(quiz.is(':animated')) {
+      return false;
+    }
+
+    var data = {};
+    data.name = prompt("Enter your name:");
+    data.score = -1;
+    if (data.name) {
+      data.score = $('p[id="question"]').attr("score");
+    }
+    if (data.score !== -1) {
+      $.ajax({
+        type: "POST",
+        url: "/quiz",
+        data: data
+      });
+    }
+
+    $('#score').hide();
   });
   
   // Click handler for the 'Start Over' button
@@ -128,6 +148,8 @@ const readline = require('readline')
   
   // Displays next requested element
   function displayNext() {
+    $('#start').hide();
+    $('#score').hide();
     quiz.fadeOut(function() {
       $('#question').remove();
       
@@ -151,33 +173,25 @@ const readline = require('readline')
         quiz.append(scoreElem).fadeIn();
         $('#next').hide();
         $('#prev').hide();
+        $('#score').show();
         $('#start').show();
       }
     });
   }
  // Calculate the score and display score
   function displayScore() {
-    var score = $('<p>',{id: 'question'});
-
     var numCorrect = 0;
     for (var i = 0; i < selections.length; i++) {
       if (questions[i].choices[selections[i]] === local_results[i]) {
         numCorrect++;
       }
     }
-    
-    /////
-// Query the mongoDB, and call output_actors on the results
-//
-// res = HTTP result object sent back to the client
 
-// insert into Mongo
-  response = readline()
-  db.userscore.insert({ "username" : response, "score" : score });
-
+    var score = $('<p>',{id: 'question'});
+    score.attr('score', numCorrect);
 
     // Now return user score
-    score.append('You got' + numCorrect + ' out of ' +
+    score.append('You got ' + numCorrect + ' out of ' +
                  questions.length + ' correct!');
     
 

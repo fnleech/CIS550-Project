@@ -29,6 +29,10 @@ app.get('/country', routes.do_coun);
 app.get('/userscore', userscore.show_scores);
 
 //app.get('/map', map.display_mapresults);
+app.get('/coutry', routes.do_cou);
+app.get('/athlete', routes.do_ath);
+
+app.post('/quiz', quiz.save_results);
 
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){
