@@ -23,6 +23,7 @@ app.get('/', routes.do_work);
 app.get('/quiz', quiz.load_quiz);
 app.get('/query', query.do_work);
 app.get('/reference', routes.do_ref);
+app.get('/olympics', routes.do_olym);
 //app.get('/map', map.display_mapresults);
 
 // Listen on the port we specify
