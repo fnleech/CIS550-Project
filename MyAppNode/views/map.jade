@@ -25,7 +25,7 @@ block content
       script.
 
         //basic map config with custom fills, mercator projection
-        var map = new Datamap({
+        var mapArgs = {
         scope: 'world',
         element: document.getElementById('container1'),
         projection: 'mercator',
@@ -37,14 +37,14 @@ block content
         gt50: '#FFB67A'
         },
 
-        data: !{mapresults};
-
         geographyConfig: {
             popupTemplate: function(geo, data) {
                 return '<div class="hoverinfo"><strong>' + geo.properties.name + ": " + data[geo.id].medals + "</strong></div>"
             }
         }
-        });
+        };
+        mapArgs.data = !{mapresults};
+        var map = new Datamap(mapArgs);
       | 
       br 
       | 
