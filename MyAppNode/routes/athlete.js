@@ -32,7 +32,6 @@ var query_athlete = function (conn, cb) {
       if (err) {
         return cb(err, conn);
       } else {
-			console.log(result.rows);
             global_info = result.rows;
             global_search = global_info.AID;
             return cb(null, conn);
@@ -49,7 +48,7 @@ var query_results = function (conn, cb) {
       if (err) {
         return cb(err, conn);
       } else {
-			console.log(result.rows);
+            console.log(global_info);
             output_table(global_res, global_info, result.rows);
             return cb(null, conn);
       }
