@@ -1,7 +1,5 @@
 // This is the intermediate page for quiz queries
 
-/*
-
 // Query the oracle database, and call output_actors on the results 
 // req is an object containing information about the HTTP request that raised the event. In response to req, you use res to send back the desired HTTP response
 
@@ -72,7 +70,7 @@ var doquery1 = function (conn, cb) {
     	throw err;
   	} else {
 			var results = [];
-			results.push(rows.rows[0].MEDALCOUNT);
+			results.push(rows.rows[0].CID);
 			return cb(null, results, conn);
   	}
 	});}
@@ -93,7 +91,7 @@ var doquery2 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.push(rows.rows[0].Height);
+			results.push(rows.rows[0].HEIGHT);
 			return cb(null, results, conn);
   	}
 	});}
@@ -112,7 +110,7 @@ var doquery3 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.push(rows.rows[0].name);
+			results.push(rows.rows[0].NAME);
 			return cb(null, results, conn);
   	}
 	});}
@@ -130,7 +128,7 @@ var doquery4 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.push(rows.rows[0].USAwins);
+			results.push(rows.rows[0].USAWINS);
 			return cb(null, results, conn);
   	}
 	});}
@@ -146,20 +144,21 @@ var doquery5 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.push(rows.rows[0].MedalCount);
+			results.push(rows.rows[0].MEDALCOUNT);
 			console.log(results);
+			display_quiz(global_res, results);
 			return cb(null, conn);
   	}
-	});}*/
+	});}
 
 //Connect to MongoDB 
-//var mongojs= require('mongojs');
-//var db = mongojs('mongodb://550G16:PENN550@ds163377.mlab.com:63377/db550', ['userscore']);
+var mongojs= require('mongojs');
+var db = mongojs('mongodb://550G16:PENN550@ds163377.mlab.com:63377/db550', ['userscore']);
 
 exports.save_results = function(req, res) {
 	if (req.body.name && req.body.score) {
 		console.log("recieved a post with username: " + req.body.name);
-		//db.userscore.insert({ "username" : response, "score" : score });
+		db.userscore.insert({ "username" : response, "score" : score });
 	}
 }
 
@@ -170,6 +169,5 @@ function display_quiz(res, results) {
 };
 
 exports.load_quiz = function(req, res){
-    //query_db(res);
-	display_quiz(res, [5,5,5,5,5]);
+    query_db(res);
 };
