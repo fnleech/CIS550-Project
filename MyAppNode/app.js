@@ -4,7 +4,7 @@
  */
 var express = require('express')
   , routes = require('./routes')
-  , query = require('./routes/query')
+  , country = require('./routes/country')
   , quiz = require('./routes/quiz')
   , userscore = require('./routes/userscore')
 	, map = require('./routes/mapquery.js')
@@ -26,7 +26,7 @@ app.get('/reference', routes.do_ref);
 app.get('/olympics', routes.do_olym);
 //app.get('/map', routes.do_map);
 app.get('/userscore', userscore.show_scores);
-app.get('/results', query.do_work);
+app.get('/results', country.do_work);
 
 app.get('/map', map.load_mapresults);
 app.get('/country', routes.do_cou);
