@@ -34,6 +34,7 @@ var query_athlete = function (conn, cb) {
       } else {
             global_info = result.rows;
             global_search = global_info.AID;
+            console.log(global_search);
             return cb(null, conn);
       }
     });
@@ -41,7 +42,7 @@ var query_athlete = function (conn, cb) {
 
 var query_results = function (conn, cb) {
   conn.execute(
-    "SELECT * FROM RESULT WHERE AID = :name",
+    "SELECT * FROM RESULT WHERE AID=:name",
     [global_search],
     function(err, result)
     {
@@ -49,6 +50,7 @@ var query_results = function (conn, cb) {
         return cb(err, conn);
       } else {
             console.log(global_info);
+            console.log(result.rows);
             output_table(global_res, global_info, result.rows);
             return cb(null, conn);
       }
