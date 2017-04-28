@@ -4,6 +4,12 @@ extends layout
 block navbarcontent
 
 block content
+  &nbsp
+  &nbsp
+  &nbsp
+  &nbsp
+  &nbsp
+  &nbsp
   .container
     p
       table
@@ -28,7 +34,7 @@ block content
             td &nbsp;
             td=results[inx].EVENT
             td &nbsp;
-            td=results[inx].HMEDAL 
+            td=results[inx].MEDAL 
   // Put a click button that lets us return to the index page 
   form(method='get', action='/')
       input(type='submit', value='Return')
