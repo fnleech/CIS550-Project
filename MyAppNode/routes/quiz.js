@@ -144,7 +144,6 @@ var doquery5 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-		  	console.log(rows.rows);
 			results.push(rows.rows[0].MEDALCOUNT);
 			console.log(results);
 			display_quiz(global_res, results);

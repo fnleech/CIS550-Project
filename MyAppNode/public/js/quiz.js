@@ -16,7 +16,7 @@
     choices: [14, 13, 10, 9, 11],
   }, {
     question: "How many gold medals has the smallest IOC Country (by population) won?",
-    choices: [53, 11, 32, 60, 29],
+    choices: [53, 11, 32, 62, 29],
   }];
   
   //keep track of the question number
