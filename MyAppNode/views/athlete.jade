@@ -19,3 +19,5 @@ block content
 		form(name="Select Athlete", method = "post", action="/athresults")
 			input(type='text', name='name')
 			input(type='submit', value='Submit')
+		if error
+		  p No athlete with that name

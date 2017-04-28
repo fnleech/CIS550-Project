@@ -33,9 +33,15 @@ var query_athlete = function (conn, cb) {
         return cb(err, conn);
       } else {
             global_info = result.rows;
-            global_search = global_info[0].AID;
-            console.log(global_search);
-            return cb(null, conn);
+            if (global_info) {
+                global_search = global_info[0].AID;
+                return cb(null, conn);
+            } else {
+                global_search = null;
+                athlete_error(global_res);
+                return cb(null, null);
+            }
+            
       }
     });
 };
@@ -90,6 +96,12 @@ function output_table(res,info,results) {
 		   {   info: info,
                results: results }
 	  );
+}
+
+function athlete_error(res) {
+    res.render('athlete.jade',
+        { error: 'an error' }
+    )
 }
 
 /////
