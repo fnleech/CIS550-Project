@@ -39,7 +39,7 @@ var query_athlete = function (conn, cb) {
             } else {
                 global_search = null;
                 athlete_error(global_res);
-                return cb(null, null);
+                return cb(null, conn);
             }
             
       }
@@ -47,6 +47,9 @@ var query_athlete = function (conn, cb) {
 };
 
 var query_results = function (conn, cb) {
+  if (global_search === null) {
+      return cb(null, conn);
+  } else {
   conn.execute(
     "SELECT * FROM RESULT WHERE AID=:name",
     [global_search],
@@ -60,7 +63,7 @@ var query_results = function (conn, cb) {
             output_table(global_res, global_info, result.rows);
             return cb(null, conn);
       }
-    });
+    })};
 };
 
 /////
