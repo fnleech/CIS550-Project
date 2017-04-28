@@ -24,9 +24,10 @@ var dorelease = function(conn) {
 
 
 var query_athlete = function (conn, cb) {
+    console.log(global_search);
   conn.execute(
-    "SELECT * FROM ATHLETE WHERE FULLNAME='Usain St. Leo Bolt'",
-    //[global_search],
+    "SELECT * FROM ATHLETE WHERE FULLNAME=:name",
+    {name: global_search},
     function(err, result)
     {
       if (err) {
