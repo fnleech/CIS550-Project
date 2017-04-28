@@ -226,7 +226,7 @@
                 },
                 popupOnHover: !0,
                 highlightOnHover: !0,
-                highlightFillColor: "#FC8D59",
+                highlightFillColor: "#FFD700",
                 highlightBorderColor: "rgba(250, 15, 160, 0.2)",
                 highlightBorderWidth: 2
             },

@@ -146,7 +146,7 @@ var doquery5 = function (results, conn, cb) {
   	if(err) {
     	throw err;
   	} else {
-			results.push(rows.rows[0].name);
+			results.push(rows.rows[0].MedalCount);
 			console.log(results);
 			return cb(null, conn);
   	}
