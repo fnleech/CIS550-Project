@@ -25,7 +25,8 @@ var dorelease = function(conn) {
 
 var query_athlete = function (conn, cb) {
   conn.execute(
-    "SELECT * FROM ATHLETE WHERE FULLNAME= :name",
+    "SELECT * FROM ATHLETE WHERE FULLNAME='" +
+    ":name'",
     [global_search],
     function(err, result)
     {
