@@ -33,7 +33,7 @@ var query_athlete = function (conn, cb) {
         return cb(err, conn);
       } else {
 			console.log(result.rows);
-            global_info = result.rows[0];
+            global_info = result.rows;
             global_search = global_info.AID;
             return cb(null, conn);
       }
