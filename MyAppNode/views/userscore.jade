@@ -1,0 +1,29 @@
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /actor once
+// the user hits Submit
+block navbarcontent
+
+block content
+  .container
+    p
+      | 
+      br 
+      | 
+      br 
+      h2 User Score Dashboard
+      | 
+      br 
+    // Create a table with one row per result
+    form(method="get", action="/userscore")
+    p
+      table
+        - for (var inx = 0; inx < results.length; inx++)
+          tr
+            td=results[inx].username
+            td &nbsp;
+            td=results[inx].score
+            td &nbsp;
+    // Put a click button that lets us return to the index page 
+    form(method='get', action='/')
+        input(type='submit', value='Return')

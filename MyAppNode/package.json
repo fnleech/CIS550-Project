@@ -12,6 +12,7 @@
     "express": "3.2.6",
     "jade": "*",
     "jade-bootstrap": "*",
+    "mongojs": "*",
     "nib": "*",
     "stylus": "*",
     "topojson": "^3.0.0"

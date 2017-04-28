@@ -6,7 +6,7 @@ var express = require('express')
   , routes = require('./routes')
   , query = require('./routes/query')
   , quiz = require('./routes/quiz')
-  //, map = require('./routes/map')
+  , userscore = require('./routes/userscore')
   , http = require('http')
   , path = require('path')
   , stylus = require("stylus")
@@ -26,6 +26,8 @@ app.get('/reference', routes.do_ref);
 app.get('/olympics', routes.do_olym);
 app.get('/map', routes.do_map);
 app.get('/country', routes.do_coun);
+app.get('/userscore', userscore.show_scores);
+
 //app.get('/map', map.display_mapresults);
 
 // Listen on the port we specify
