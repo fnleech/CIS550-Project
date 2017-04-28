@@ -1,16 +1,10 @@
-/*var async = require('async');
+var async = require('async');
 var oracledb = require('oracledb');
 var global_res;
 var global_login;
 
-// Properties are applicable to all connections and SQL executions.
-// They can also be set or overridden at the individual execute() call level
-//
-// This script sets outFormat in the execute() call but it could be set here instead:
-// oracledb.outFormat = oracledb.OBJECT;
-
 var doconnect = function (cb) {
-	console.log(cb);
+	oracledb.outFormat = oracledb.OBJECT;
 	oracledb.getConnection(
 		{
 			user: "cis550project",
@@ -28,20 +22,16 @@ var dorelease = function(conn) {
 };
 
 
-// Optional Object Output Format
-var doquery_object = function (conn, cb) {
+var query_country = function (conn, cb) {
   conn.execute(
-    "SELECT * FROM ATHLETE WHERE rownum <= 10",
-    {}, // A bind variable parameter is needed to disambiguate the following options parameter
-        // otherwise you will get Error: ORA-01036: illegal variable name/number
-    { outFormat: oracledb.OBJECT }, // outFormat can be OBJECT or ARRAY.  The default is ARRAY
+    "SELECT * FROM COUNTRY",
     function(err, result)
     {
       if (err) {
         return cb(err, conn);
       } else {
-		console.log(result.rows);
-        output_query(global_res, global_login, result.rows);
+				console.log(result.rows);
+        output_table(global_res, result.rows);
         return cb(null, conn);
       }
     });
@@ -52,13 +42,12 @@ var doquery_object = function (conn, cb) {
 //
 // res = HTTP result object sent back to the client
 // name = Name to query for
-function query_db(res, login) {
+function query_db(res) {
 	global_res = res;
-	global_login = login;
 	async.waterfall(
 		[
 			doconnect,
-			doquery_object
+			query_country
 		],
 		function (err, conn) {
 			if (err) { console.error("In waterfall error cb: ==>", err, "<=="); }
@@ -66,7 +55,7 @@ function query_db(res, login) {
 				dorelease(conn);
 		});
 }
-*/
+
 
 // ///
 // Given a set of query results, output a table
@@ -74,16 +63,14 @@ function query_db(res, login) {
 // res = HTTP result object sent back to the client
 // name = Name to query for
 // results = List object of query results
-function output_table(res,login,results) {
+function output_table(res,results) {
 	res.render('query.jade',
-		   { title: "Person with login " + login,
-		     results: results }
+		   { results: results }
 	  );
 }
 
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	//query_db(res,req.query.name);
-	output_table(res, "", null);
+		query_db(res);
 };

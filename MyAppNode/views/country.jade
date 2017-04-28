@@ -16,7 +16,7 @@ block content
 				&nbsp
 				&nbsp
 				&nbsp
-		form(name="Select Country", method = "post")
+		form(name="Select Country", method = "get", action="/results")
 			div.input
 				span.label Country
 				+dropdown("Country",[
@@ -25,3 +25,4 @@ block content
 				 	{text:"C"},
 				 	{text:"D"}
 				 ])
+			input(type='submit', value='Submit')
