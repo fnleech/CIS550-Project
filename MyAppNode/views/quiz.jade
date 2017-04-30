@@ -11,15 +11,15 @@ block content
       #container
         #title
           h1 Summer Olympics Quiz
-        br
-        #quiz
-        #next.button
-          a(href='#') Next
-        #prev.button
-          a(href='#') Prev
+        form(action='')
+          - for (var i=0; i < 5; i++)
+            h2= questions[i].question
+            - for (var j=0; j < 5; j++)
+              input(type='radio', name="q"+i, value=questions[i].choices[j])
+              span= questions[i].choices[j]
+              br
+            br
         #score.button
           a(href='#') Submit Score
-        #start.button
-          a(href='#') Start Over
       script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
       script(type='text/javascript', src='/js/quiz.js')
