@@ -14,6 +14,7 @@
     "jade-bootstrap": "*",
     "mongojs": "^2.4.0",
     "nib": "*",
+    "oracledb": "^1.13.1",
     "stylus": "*",
     "topojson": "^3.0.0"
   }
