@@ -14,23 +14,33 @@ exports.do_work = function(req, res){
 //};
 
 exports.do_ref = function(req, res){
-  res.render('reference.jade', {});
+  res.render('reference.jade', {
+    title: 'Reference'
+  });
 };
 
 exports.do_olym = function(req, res){
-  res.render('olympics.jade', {});
+  res.render('olympics.jade', {
+    title: 'Olympics'
+  });
 };
 
 exports.do_map = function(req, res){
-  res.render('map.jade', {});
+  res.render('map.jade', {
+    title: 'Map'
+  });
 };
 
 exports.do_cou = function(req, res){
-  res.render('country.jade', {});
+  res.render('country.jade', {
+    title: 'Countries'
+  });
 };
 
 exports.do_ath = function(req, res){
-  res.render('athlete.jade', {});
+  res.render('athlete.jade', {
+    title: 'Athletes'
+  });
 };
 //exports.do_quiz = function(req, res){
   //res.render('quiz.jade', {});
