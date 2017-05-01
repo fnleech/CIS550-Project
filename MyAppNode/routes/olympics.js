@@ -29,8 +29,7 @@ var query_olympics = function (conn, cb) {
     "ON O.Year = P.Year " +
     "Inner JOIN Country C "+
     "ON C.CID = P.CID "+
-    "WHERE P.Role = 'both' and O.Year := year",
-    [global_search],
+    "WHERE P.Role = 'both' and O.Year = " + global_search,
     function(err, result)
     {
       if (err) {
