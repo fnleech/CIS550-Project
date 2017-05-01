@@ -1,17 +1,9 @@
 // This is the intermediate page for quiz queries
 
-// Query the oracle database, and call output_actors on the results 
-// req is an object containing information about the HTTP request that raised the event. In response to req, you use res to send back the desired HTTP response
-
 var async = require('async');
 var oracledb = require('oracledb');
 var global_res;
 
-// Properties are applicable to all connections and SQL executions.
-// They can also be set or overridden at the individual execute() call level
-//
-// This script sets outFormat in the execute() call but it could be set here instead:
-// oracledb.outFormat = oracledb.OBJECT;
 
 var doconnect = function (cb) {
 	oracledb.outFormat = oracledb.OBJECT;
@@ -32,7 +24,7 @@ var dorelease = function(conn) {
 };
 
 /////
-// Query the oracle database, and call output_actors on the results
+// Query the oracle database
 //
 // res = HTTP result object sent back to the client
 function query_db(res) {
@@ -163,11 +155,31 @@ exports.save_results = function(req, res) {
 }
 
 
+
+  var questions = [{
+    question: "Which country has the most number of gold medals in the 2012 Summer Olympics?",
+    choices: ["Russia", "USA", "China", "Great Britain", "France"],
+  }, {
+    question: "What's the best height to win a gold medal in swimming if you're a guy?",
+    choices: [190, 163, 183, 177, 185],
+  }, {
+    question: "Which Summer Olympics was most expensive per athlete?",
+    choices: ["Soviet Union", "London", "Barcelona", "Athens", "Beijing"],
+  }, {
+    question: "From 1960-2012, how many Summer Olympics did the USA take home the most number of gold medals?",
+    choices: [14, 13, 10, 9, 11],
+  }, {
+    question: "How many gold medals has the smallest IOC Country (by population) won?",
+    choices: [53, 11, 33, 62, 29],
+  }];
+
 function display_quiz(res, results) {
 	res.render('quiz.jade', 
-		{ results: JSON.stringify(results) });
+		{ results: JSON.stringify(results),
+		  questions: questions });
 };
 
 exports.load_quiz = function(req, res){
-    query_db(res);
+    //query_db(res);
+	display_quiz(res, ["USA",183,"Soviet Union",11,62]);
 };

@@ -67,10 +67,9 @@ var query_results = function (conn, cb) {
 };
 
 /////
-// Query the oracle database, and call output_actors on the results
+// Query the oracle database
 //
 // res = HTTP result object sent back to the client
-// name = Name to query for
 function query_db(res) {
 	global_res = res;
 	async.waterfall(
@@ -91,7 +90,7 @@ function query_db(res) {
 // Given a set of query results, output a table
 //
 // res = HTTP result object sent back to the client
-// name = Name to query for
+// info = object with athlete info results
 // results = List object of query results
 function output_table(res,info,results) {
     console.log(results);
