@@ -2,7 +2,6 @@ var async = require('async');
 var oracledb = require('oracledb');
 var global_res;
 var global_search;
-var global_info;
 
 var doconnect = function (cb) {
 	oracledb.outFormat = oracledb.OBJECT;
@@ -31,14 +30,12 @@ var query_olympics = function (conn, cb) {
       if (err) {
         return cb(err, conn);
       } else {
-            global_info = result.rows;
-            if (global_info) {
-                global_search = global_info[0].AID;
+            if (result.rows[0]) {
+                output_table(global_res, result.rows[0])
                 return cb(null, conn);
             } else {
-                global_search = null;
-                athlete_error(global_res);
-                return cb(null, null);
+                olympics_error(global_res);
+                return cb(null, conn);
             }
             
       }
@@ -55,7 +52,7 @@ function query_db(res) {
 	async.waterfall(
 		[
 			doconnect,
-			query_olympics,
+			query_olympics
 		],
 		function (err, conn) {
 			if (err) { console.error("In waterfall error cb: ==>", err, "<=="); }
@@ -71,11 +68,10 @@ function query_db(res) {
 // res = HTTP result object sent back to the client
 // name = Name to query for
 // results = List object of query results
-function output_table(res,info,results) {
+function output_table(res,results) {
     console.log(results);
-	res.render('olyquery.jade',
-		   {   info: info,
-               results: results }
+	res.render('olympics.jade',
+		   { results: results }
 	  );
 }
 
@@ -88,6 +84,6 @@ function athlete_error(res) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-    global_search = "'" + req.body.name + "'";
+    global_search = "'" + req.body.year + "'";
     query_db(res);
 };
