@@ -7,6 +7,7 @@ var express = require('express')
   , country = require('./routes/country')
   , athlete = require('./routes/athlete')
   , quiz = require('./routes/quiz')
+  , olympics = require('./routes/olympics')
   , userscore = require('./routes/userscore')
 	, map = require('./routes/mapquery.js')
   , http = require('http')
@@ -24,7 +25,7 @@ init_app(app);
 app.get('/', routes.do_work);
 app.get('/quiz', quiz.load_quiz);
 app.get('/reference', routes.do_ref);
-app.get('/olympics', routes.do_olym);
+app.get('/olympics', olympics.do_work);
 //app.get('/map', routes.do_map);
 app.get('/userscore', userscore.show_scores);
 app.post('/athresults', athlete.do_work);
