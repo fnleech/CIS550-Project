@@ -13,14 +13,9 @@ block content
 			&nbsp
 			&nbsp
 			p Select the Summer Olympics year that you're interested in.
-				&nbsp
-				&nbsp
-				&nbsp
-		form(name="Select Olympics", method = "get" action="/")
-			div.input
-				span.label Olympics
+			br
 				+dropdown("Summer Olympics",[
-				 	{text:"London 2012"},
+				 	{text:"London 2012", href:"/olympics"},
 				 	{text:"Beijing 2008"},
 				 	{text:"Athens 2004"},
 				 	{text:"Sydney 2000"}
