@@ -15,7 +15,20 @@ block content
             p Select the Summer Olympics year that you're interested in.
             br
             +dropdown("Summer Olympics",[ 
-                {text:"London 2012", url:"/olympics?year=2012"}
+                {text:"London 2012", url:"/olympics?year=2012"},
+				{text:"Beijing 2008", url:"/olympics?year=2008"},
+				{text:"Athens 2004", url:"/olympics?year=2004"},
+				{text:"Sydney 2000", url:"/olympics?year=2000"},
+				{text:"Atlanta 1996", url:"/olympics?year=1996"},
+				{text:"Barcelona 1992", url:"/olympics?year=1992"},
+				{text:"Seoul 1988", url:"/olympics?year=1988"},
+				{text:"Los Angeles 1984", url:"/olympics?year=1984"},
+				{text:"Moscow 1980", url:"/olympics?year=1980"},
+				{text:"Montreal 1976", url:"/olympics?year=1976"},
+				{text:"Munich 1972", url:"/olympics?year=1972"},
+				{text:"Mexico City 1968", url:"/olympics?year=1968"},
+				{text:"Tokyo 1964", url:"/olympics?year=1964"},
+				{text:"Rome 1960", url:"/olympics?year=1960"}
             ])
             if results
                 p
@@ -25,7 +38,7 @@ block content
                             td &nbsp;
                             td YEAR
                             td &nbsp;
-                            td COST
+                            td COST(USD Billions)
                             td &nbsp;
                             td POPULATION
                             td &nbsp;

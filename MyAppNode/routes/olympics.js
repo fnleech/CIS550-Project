@@ -75,7 +75,7 @@ function query_db(res) {
 // name = Name to query for
 // results = List object of query results
 function output_table(res,results) {
-    if(results.COST = -1) {
+    if(results.COST === -1) {
         results.COST = 'No Data';
     }
 	res.render('olympics.jade',
