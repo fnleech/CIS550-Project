@@ -86,17 +86,21 @@ function output_table(res,results) {
 function athlete_error(res) {
     res.render('olympics.jade',
         { error: 'an error' }
-    )
+    );
 }
 
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
     if (req.query.year) {
-        global_search = "'" + req.query.year + "'";
-        console.log(global_search);
-        query_db(res);
+        if (req.query.year >= 1960 && req.query.year <= 2012 && req.query.year %4 === 0) {
+            global_search = "'" + req.query.year + "'";
+            console.log(global_search);
+            query_db(res);
+        } else {
+            res.render('olympics.jade', {});
+        }
     } else {
-        res.render('olympics.jade', {})
+        res.render('olympics.jade', {});
     }
 };
