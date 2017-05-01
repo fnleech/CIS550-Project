@@ -36,6 +36,7 @@ var query_olympics = function (conn, cb) {
       if (err) {
         return cb(err, conn);
       } else {
+            console.log(result.rows);
             if (result.rows[0]) {
                 output_table(global_res, result.rows[0])
                 return cb(null, conn);
@@ -90,6 +91,7 @@ function athlete_error(res) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-    global_search = "'" + req.body.year + "'";
+    global_search = "'" + req.query.year + "'";
+    console.log(global_search);
     query_db(res);
 };
