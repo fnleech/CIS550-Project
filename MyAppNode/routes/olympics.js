@@ -24,7 +24,13 @@ var dorelease = function(conn) {
 var query_olympics = function (conn, cb) {
     console.log(global_search);
   conn.execute(
-    "SELECT * FROM Olympics WHERE Cost != -1 AND Year=" + global_search,
+    "SELECT C.Name, O.Cost, O.Population, O.GDP"+
+    "FROM Olympics O" + 
+    "Inner JOIN Participates P" +
+    "ON O.Year = P.Year" +
+    "Inner JOIN Country C"+
+    "ON C.CID = P.CID"+
+    "WHERE P.Role = "both" and O.Year := year" 
     function(err, result)
     {
       if (err) {
