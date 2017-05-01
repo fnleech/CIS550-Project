@@ -5,29 +5,29 @@ extend layout
 block navbarcontent
 
 block content
-	&nbsp
-	&nbsp
-	.container
-		h2 Results
-			&nbsp
-			&nbsp
-			&nbsp
-			p Select the Summer Olympics year that you're interested in.
-			br
-			+dropdown("Summer Olympics",[ 
-				{text:"London 2012", url:"/olympics?year=2012"}
-			])
-			if results
-				p
-						table
-						tr
-							td=results.NAME
-            				td &nbsp;
-            				td=results.COST
-            				td &nbsp;
-            				td=results.POPULATION
-            				td &nbsp;
-            				td=results.GDP
-      				&nbsp
+    &nbsp
+    &nbsp
+    .container
+        h2 Results
+            &nbsp
+            &nbsp
+            &nbsp
+            p Select the Summer Olympics year that you're interested in.
+            br
+            +dropdown("Summer Olympics",[ 
+                {text:"London 2012", url:"/olympics?year=2012"}
+            ])
+            if results
+                p
+                        table
+                        tr
+                            td=results.NAME
+                            td &nbsp;
+                            td=results.COST
+                            td &nbsp;
+                            td=results.POPULATION
+                            td &nbsp;
+                            td=results.GDP
+                      &nbsp
 
 
