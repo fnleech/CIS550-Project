@@ -14,18 +14,13 @@ block content
 			&nbsp
 			p Select the Summer Olympics year that you're interested in.
 			br
-			+dropdown("Summer Olympics",[
-				{text:"London 2012", url:"/olympics?year=2012"},
-				{text:"Beijing 2008", url:"/olympics?year=2008"},
-				{text:"Athens 2004", url:"/olympics?year=2004"},
-				{text:"Sydney 2000", url:"/olympics?year=2000"},
-				{text:"Atlanta 1996", url:"/olympics?year=1996"},
-				{text:"Barcelona 1992", url:"/olympics?year=1992"},
+			+dropdown("Summer Olympics",[ 
+				{text:"London 2012", url:"/olympics?year=2012"}
 			])
 			if results
-    			p
-      				table
-        				tr
+				p
+						table
+						tr
 							td=results.NAME
             				td &nbsp;
             				td=results.COST
