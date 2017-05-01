@@ -22,15 +22,15 @@ var dorelease = function(conn) {
 };
 
 var query_olympics = function (conn, cb) {
-    console.log(global_search);
   conn.execute(
-    "SELECT C.Name, O.Cost, O.Population, O.GDP"+
-    "FROM Olympics O" + 
-    "Inner JOIN Participates P" +
-    "ON O.Year = P.Year" +
-    "Inner JOIN Country C"+
-    "ON C.CID = P.CID"+
-    "WHERE P.Role = "both" and O.Year := year" 
+    "SELECT C.Name, O.Cost, O.Population, O.GDP "+
+    "FROM Olympics O " + 
+    "Inner JOIN Participates P " +
+    "ON O.Year = P.Year " +
+    "Inner JOIN Country C "+
+    "ON C.CID = P.CID "+
+    'WHERE P.Role = "both" and O.Year := year',
+    [global_search],
     function(err, result)
     {
       if (err) {
