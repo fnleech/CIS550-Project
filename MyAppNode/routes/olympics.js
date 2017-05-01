@@ -23,7 +23,7 @@ var dorelease = function(conn) {
 
 var query_olympics = function (conn, cb) {
   conn.execute(
-    "SELECT C.Name, O.Cost, O.Population, O.GDP "+
+    "SELECT C.Name, O.Year, O.Cost, C.Population, C.GDP "+
     "FROM Olympics O " + 
     "Inner JOIN Participates P " +
     "ON O.Year = P.Year " +
