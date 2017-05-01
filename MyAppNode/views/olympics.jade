@@ -5,32 +5,29 @@ extend layout
 block navbarcontent
 
 block content
-	&nbsp
-	&nbsp
-	.container
-		h2 Results
-			&nbsp
-			&nbsp
-			&nbsp
-			p Select the Summer Olympics year that you're interested in.
-			br
-			form(action='/olympics' method='get')
-				select(name='year')
-					option(value='2012') London 2012
-					option(value='2008') Beijing 2008
-				br
-				input(type='submit')
-			if results
-				p Olympic Information
-					table
-						tr
-							td=results.NAME
-							td &nbsp;
-							td=results.YEAR
-							td &nbsp;
-							td=results.POPULATION
-							td &nbsp;
-							td=results.GDP
-							td &nbsp;
+    &nbsp
+    &nbsp
+    .container
+        h2 Results
+            &nbsp
+            &nbsp
+            &nbsp
+            p Select the Summer Olympics year that you're interested in.
+            br
+            +dropdown("Summer Olympics",[ 
+                {text:"London 2012", url:"/olympics?year=2012"}
+            ])
+            if results
+                p
+                    table
+                        tr
+                            td=results.NAME
+                            td &nbsp;
+                            td=results.COST
+                            td &nbsp;
+                            td=results.POPULATION
+                            td &nbsp;
+                            td=results.GDP
+                      &nbsp
 
 
