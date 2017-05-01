@@ -29,7 +29,7 @@ var query_olympics = function (conn, cb) {
     "ON O.Year = P.Year " +
     "Inner JOIN Country C "+
     "ON C.CID = P.CID "+
-    'WHERE P.Role = "both" and O.Year := year',
+    "WHERE P.Role = 'both' and O.Year := year",
     [global_search],
     function(err, result)
     {
@@ -91,7 +91,11 @@ function athlete_error(res) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-    global_search = "'" + req.query.year + "'";
-    console.log(global_search);
-    query_db(res);
+    if (req.query.year) {
+        global_search = "'" + req.query.year + "'";
+        console.log(global_search);
+        query_db(res);
+    } else {
+        res.render('olympics.jade', {})
+    }
 };
