@@ -5,36 +5,36 @@ extend layout
 block navbarcontent
 
 block content
-	&nbsp
-	&nbsp
-	.container
-		h2 Results
-			&nbsp
-			&nbsp
-			&nbsp
-			p Select the Summer Olympics year that you're interested in.
-			br
-			+dropdown("Summer Olympics",[
-			  {text:"London 2012", url:"/olympics?year=2012"},
-			  {text:"Beijing 2008", url:"/olympics?year=2008"},
-			  {text:"Athens 2004", url:"/olympics?year=2004"},
-			  {text:"Sydney 2000", url:"/olympics?year=2000"},
-			  {text:"Atlanta 1996", url:"/olympics?year=1996"},
-			  {text:"Barcelona 1992", url:"/olympics?year=1992"},
-			])
-			if results
-    		  p
-      			table
-        		  tr
-				    td=results.YEAR
-            		td &nbsp;
-            		td=results.YEAR
-            		td &nbsp;
-            		td=results.OPENING_CEREMONY
-            		td &nbsp;
-            		td=results.CLOSING_CEREMONY
-            		td &nbsp;
-            		td=results.COST
-      			&nbsp
+    &nbsp
+    &nbsp
+    .container
+        h2 Results
+            &nbsp
+            &nbsp
+            &nbsp
+            p Select the Summer Olympics year that you're interested in.
+            br
+            +dropdown("Summer Olympics",[
+              {text:"London 2012", url:"/olympics?year=2012"},
+              {text:"Beijing 2008", url:"/olympics?year=2008"},
+              {text:"Athens 2004", url:"/olympics?year=2004"},
+              {text:"Sydney 2000", url:"/olympics?year=2000"},
+              {text:"Atlanta 1996", url:"/olympics?year=1996"},
+              {text:"Barcelona 1992", url:"/olympics?year=1992"},
+            ])
+            if results
+              p
+                  table
+                  tr
+                    td=results.YEAR
+                    td &nbsp;
+                    td=results.YEAR
+                    td &nbsp;
+                    td=results.OPENING_CEREMONY
+                    td &nbsp;
+                    td=results.CLOSING_CEREMONY
+                    td &nbsp;
+                    td=results.COST
+                  &nbsp
 
 
